@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 227042790}
   - component: {fileID: 227042789}
   m_Layer: 5
-  m_Name: capitale
+  m_Name: Capitale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 499560392}
   - component: {fileID: 499560391}
   m_Layer: 5
-  m_Name: ville
+  m_Name: Ville
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1774,7 +1774,7 @@ GameObject:
   - component: {fileID: 749295552}
   - component: {fileID: 749295551}
   m_Layer: 5
-  m_Name: foret
+  m_Name: Frontiere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1872,7 +1872,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -51.6, y: 82}
+  m_AnchoredPosition: {x: -378, y: -26}
   m_SizeDelta: {x: 85, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783470796
@@ -2240,7 +2240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -376, y: -25}
+  m_AnchoredPosition: {x: -51, y: 82}
   m_SizeDelta: {x: 85, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927500736
@@ -3137,7 +3137,7 @@ GameObject:
   - component: {fileID: 1566107324}
   - component: {fileID: 1566107323}
   m_Layer: 5
-  m_Name: frontiere
+  m_Name: Foret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3514,7 +3514,7 @@ RectTransform:
   m_GameObject: {fileID: 1680850479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.641039, y: 1.4592788, z: 1}
+  m_LocalScale: {x: 1.641039, y: 1.2817429, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575324854}
@@ -4450,7 +4450,7 @@ GameObject:
   - component: {fileID: 1866842002}
   - component: {fileID: 1866842001}
   m_Layer: 5
-  m_Name: BtnCadenaForet
+  m_Name: BtnCadenaFrontiere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
