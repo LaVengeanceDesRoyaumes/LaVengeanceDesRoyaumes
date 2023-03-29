@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 151337298}
   - component: {fileID: 151337297}
   m_Layer: 5
-  m_Name: ville
+  m_Name: Ville
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,7 +612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -266, y: 57}
+  m_AnchoredPosition: {x: -51, y: -127}
   m_SizeDelta: {x: 85, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259139174
@@ -1305,7 +1305,7 @@ GameObject:
   - component: {fileID: 567301688}
   - component: {fileID: 567301687}
   m_Layer: 5
-  m_Name: capitale
+  m_Name: Capitale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1378,7 +1378,7 @@ GameObject:
   - component: {fileID: 677608921}
   - component: {fileID: 677608920}
   m_Layer: 5
-  m_Name: frontiere
+  m_Name: Foret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2000,7 +2000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &801647772
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2200,7 +2200,7 @@ GameObject:
   - component: {fileID: 918301798}
   - component: {fileID: 918301797}
   m_Layer: 5
-  m_Name: foret
+  m_Name: Frontiere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2568,7 +2568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -51.6, y: -122.1}
+  m_AnchoredPosition: {x: -268, y: 56}
   m_SizeDelta: {x: 85, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1372534344
@@ -3604,7 +3604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1903841579
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4282,7 +4282,7 @@ RectTransform:
   m_GameObject: {fileID: 2014115470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.641039, y: 1.4592788, z: 1}
+  m_LocalScale: {x: 1.641039, y: 1.2819327, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1905443448}
@@ -4480,7 +4480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2052955925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4724,12 +4724,12 @@ GameObject:
   - component: {fileID: 2131023795}
   - component: {fileID: 2131023794}
   m_Layer: 5
-  m_Name: BtnCadenaForet
+  m_Name: BtnCadenaFrontiere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2131023793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4748,7 +4748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -51.7, y: -123.7}
+  m_AnchoredPosition: {x: -51.7, y: -128}
   m_SizeDelta: {x: 85, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131023794
