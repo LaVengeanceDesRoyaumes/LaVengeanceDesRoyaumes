@@ -18,15 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneMapKratos.unity
     guid: 85fc76f022c43416cac398e115409ae0
   - enabled: 1
-    path: Assets/Scenes/SceneNiveau1.unity
+    path: Assets/Scenes/SceneNiveau1Kratos.unity
     guid: 00010f29df7b64bc4984694f02244b41
   - enabled: 1
-    path: Assets/Scenes/SceneNiveau2.unity
+    path: Assets/Scenes/SceneNiveau2Kratos.unity
     guid: 7da6dcb479f9f421395faee0092dac09
   - enabled: 1
-    path: Assets/Scenes/SceneNiveau3.unity
+    path: Assets/Scenes/SceneNiveau3Kratos.unity
     guid: e753bb28f9854486fade1f7514772e56
   - enabled: 1
-    path: Assets/Scenes/SceneNiveau4.unity
+    path: Assets/Scenes/SceneNiveau4Kratos.unity
     guid: 359e111a2af5643a7aaa54c505b55fa6
   m_configObjects: {}
