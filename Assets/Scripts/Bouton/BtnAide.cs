@@ -5,15 +5,27 @@ using UnityEngine;
 
 public class BtnAide : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject MenuAide;
+    public GameObject MenuTuto;
+
+    // Menu Aide
+    public void OuvrirMenuAide()
     {
-        
+        MenuAide.SetActive(true);
+    }
+    public void SortirMenuAide()
+    {
+        MenuAide.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    // MenuTuTo
+    public void OuvrirMenuTuto()
     {
-        
+        MenuTuto.SetActive(true);
     }
+    public void SortirMenuTuto()
+    {
+        MenuTuto.SetActive(false);
+    }
+
 }

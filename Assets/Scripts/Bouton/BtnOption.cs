@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class BtnOption : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject MenuOption;
+
+    // Menu Option
+    public void OuvrirMenuOption()
     {
-        
+        MenuOption.SetActive(true);
+    }
+    public void SortirMenuOption()
+    {
+        MenuOption.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
