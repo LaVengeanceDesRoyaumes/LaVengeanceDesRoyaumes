@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimPers : MonoBehaviour
 {
     Animator animatorPerso;
-    public GameObject Baton;
+   // public GameObject Baton;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,13 +47,13 @@ public class AnimPers : MonoBehaviour
     void salut()
     {
         animatorPerso.Play("Salut");
-        Baton.SetActive(false);
+      //  Baton.SetActive(false);
         Invoke("batonRetour", 2.7f);
     }
 
     void batonRetour()
     {        
-        Baton.SetActive(true);
+       // Baton.SetActive(true);
     }
 
     void attaque()
