@@ -19,19 +19,19 @@ public class BtnMapJingshen : MonoBehaviour
     }
     public void ChargementJeuNiveau1()
     {
-        SceneManager.LoadScene("SceneNiveau1");
+        SceneManager.LoadScene("SceneNiveau1Jingshen");
     }
     public void ChargementJeuNiveau2()
     {
-        SceneManager.LoadScene("SceneNiveau2");
+        SceneManager.LoadScene("SceneNiveau2Jingshen");
     }
     public void ChargementJeuNiveau3()
     {
-        SceneManager.LoadScene("SceneNiveau3");
+        SceneManager.LoadScene("SceneNiveau3Jingshen");
     }
     public void ChargementJeuNiveau4()
     {
-        SceneManager.LoadScene("SceneNiveau4");
+        SceneManager.LoadScene("SceneNiveau4Jingshen");
     }
 
 }

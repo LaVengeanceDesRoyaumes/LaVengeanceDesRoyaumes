@@ -22,7 +22,7 @@ EditorBuildSettings:
     guid: 41ac82abe645e5649a8dce44f17d728b
   - enabled: 1
     path: Assets/Scenes/SceneNiveau1Kratos.unity
-    guid: 00010f29df7b64bc4984694f02244b41
+    guid: 7769f33fb4fa2e5458344a36556ad760
   - enabled: 1
     path: Assets/Scenes/SceneNiveau2Kratos.unity
     guid: 7da6dcb479f9f421395faee0092dac09
@@ -32,4 +32,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneNiveau4Kratos.unity
     guid: 359e111a2af5643a7aaa54c505b55fa6
+  - enabled: 1
+    path: Assets/Scenes/SceneNiveau1Jingshen.unity
+    guid: 2a2c1fd59af824e148b0d81fd05aa2f7
+  - enabled: 1
+    path: Assets/Scenes/SceneNiveau2Jingshen.unity
+    guid: c622fa8766c65409fa88ffb692b643c2
+  - enabled: 1
+    path: Assets/Scenes/SceneNiveau3Jingshen.unity
+    guid: 270223d6b6b3b4e7294e322ba6dd59fd
+  - enabled: 1
+    path: Assets/Scenes/SceneNiveau4Jingshen.unity
+    guid: e12b73ad7572d4f0ba8258638111788d
   m_configObjects: {}

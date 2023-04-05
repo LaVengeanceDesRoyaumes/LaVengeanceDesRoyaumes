@@ -19,19 +19,19 @@ public class BtnMapKratos : MonoBehaviour
     }
     public void ChargementJeuNiveau1()
     {
-        SceneManager.LoadScene("SceneNiveau1");
+        SceneManager.LoadScene("SceneNiveau1Kratos");
     }
     public void ChargementJeuNiveau2()
     {
-        SceneManager.LoadScene("SceneNiveau2");
+        SceneManager.LoadScene("SceneNiveau2Kratos");
     }
     public void ChargementJeuNiveau3()
     {
-        SceneManager.LoadScene("SceneNiveau3");
+        SceneManager.LoadScene("SceneNiveau3Kratos");
     }
     public void ChargementJeuNiveau4()
     {
-        SceneManager.LoadScene("SceneNiveau4");
+        SceneManager.LoadScene("SceneNiveau4Kratos");
     }
 
 }
