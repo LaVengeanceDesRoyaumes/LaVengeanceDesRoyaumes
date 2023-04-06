@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/jin.fbx.meta
 guid: a68dbd1adb7613d429f836adbf935244
+========
+guid: 1f622c9d3351644448e58a9906ef8582
+>>>>>>>> Stashed changes:Assets/importation/perso/nvxUn/blabla.fbx.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
