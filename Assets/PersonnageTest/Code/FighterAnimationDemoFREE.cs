@@ -10,7 +10,7 @@ public class FighterAnimationDemoFREE : MonoBehaviour
     {
     }
 
-    void OnGUI()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
