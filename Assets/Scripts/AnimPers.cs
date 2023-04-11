@@ -8,6 +8,7 @@ public class AnimPers : MonoBehaviour
     public GameObject Baton;
     public Rigidbody rigidbodyPerso;
     public  float vitesseDeplacement = 100f; 
+    
 
     // Start is called before the first frame update
     void Start()
