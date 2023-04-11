@@ -6,10 +6,14 @@ public class AnimPers : MonoBehaviour
 {
     Animator animatorPerso;
     public GameObject Baton;
+    public Rigidbody rigidbodyPerso;
+    public  float vitesseDeplacement = 100f; 
+
     // Start is called before the first frame update
     void Start()
     {
         animatorPerso = GetComponent<Animator>();
+        rigidbodyPerso= GetComponent<Rigidbody>();
         Invoke("salut", 5);           
     }
 
@@ -31,16 +35,19 @@ public class AnimPers : MonoBehaviour
             Invoke("bloque", 0);
         }
 
+        var vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
+        rigidbodyPerso.velocity= transform.forward * vDeplacement;
+
         if (Input.GetKey(KeyCode.A))
         {
             //transform.Translate(Vector3.left * Time.deltaTime * 200, Space.World);
-            animatorPerso.Play("Avance");
+            animatorPerso.Play("Recule");
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             //transform.Translate(Vector3.right * Time.deltaTime * 200, Space.World);
-            animatorPerso.Play("Recule");
+            animatorPerso.Play("Avance");
         }        
     }
 
