@@ -4,26 +4,37 @@ using UnityEngine;
 
 public class ControleAi : MonoBehaviour
 {
-    // Variable publique pour la distance d'attaque
-    public float attackRange = 2f;
-    // Variable privée pour la cible du joueur
-    private Transform target;
-    // Variable privée pour l'animation d'attaque
+    // Temps avant de lancer l'animation attaque
+    public float delayTimeAttaque = 2f;
+    // Référence à l'Animator
     private Animator animator;
+    public Rigidbody rigidbodyPerso;
+    public float vitesseDeplacement = 100f;
+    private float vDeplacement;
+
+
     void Start()
     {
-        // Récupération de la cible du joueur et de l'animation
-        target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
+        rigidbodyPerso = GetComponent<Rigidbody>();
     }
     void Update()
     {
-        // Calcul de la distance entre l'ennemi et la cible
-        float distanceToTarget = Vector3.Distance(transform.position, target.position);
-        // Si la cible est à portée d'attaque, déclencher l'animation d'attaque
-        if (distanceToTarget <= attackRange)
-        {
-            animator.SetTrigger("Attaque");
-        }
+        // Lancement de la coroutine pour jouer l'animation après un certain temps
+        StartCoroutine(PlayAttaqueAfterDelay());
+
+        vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
+        rigidbodyPerso.velocity = transform.forward * vDeplacement;
     }
+
+    IEnumerator PlayAttaqueAfterDelay()
+    {
+        // Attente du délai
+        yield return new WaitForSeconds(delayTimeAttaque);
+        // Lancement de l'animation
+        animator.SetTrigger("Attaque");
+    }
+
 }
+
+
