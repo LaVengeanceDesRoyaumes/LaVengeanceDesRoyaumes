@@ -23,7 +23,7 @@ public class ControleAi : MonoBehaviour
         // Si la cible est à portée d'attaque, déclencher l'animation d'attaque
         if (distanceToTarget <= attackRange)
         {
-            animator.SetTrigger("Attack");
+            animator.SetTrigger("Attaque");
         }
     }
 }
