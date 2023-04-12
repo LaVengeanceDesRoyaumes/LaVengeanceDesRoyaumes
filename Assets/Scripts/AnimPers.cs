@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimPers : MonoBehaviour
 {
     Animator animatorPerso;
-    public GameObject Baton;
+    //public GameObject Baton;
     public Rigidbody rigidbodyPerso;
     public  float vitesseDeplacement = 100f; 
     
@@ -55,14 +55,14 @@ public class AnimPers : MonoBehaviour
     void salut()
     {
         animatorPerso.Play("Salut");
-        Baton.SetActive(false);
+        //Baton.SetActive(false);
         Invoke("batonRetour", 2.7f);
     }
 
-    void batonRetour()
+    /*void batonRetour()
     {        
         Baton.SetActive(true);
-    }
+    }*/
 
     void attaque()
     {
