@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class AnimPers : MonoBehaviour
 {
-    Animator animatorPerso;
+    public Animator animatorPerso;
     public GameObject Baton;
     public Rigidbody rigidbodyPerso;
-    public  float vitesseDeplacement = 100f; 
+    public float vitesseDeplacement = 100f;
+    private float vDeplacement;
     
 
     // Start is called before the first frame update
@@ -36,20 +37,51 @@ public class AnimPers : MonoBehaviour
             Invoke("bloque", 0);
         }
 
-        var vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
-        rigidbodyPerso.velocity= transform.forward * vDeplacement;
+        vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
+        rigidbodyPerso.velocity = transform.forward * vDeplacement;
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            //transform.Translate(Vector3.left * Time.deltaTime * 200, Space.World);
-            animatorPerso.Play("Recule");
+            animatorPerso.SetBool("MouvementAvance", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.D))
+        {
+            animatorPerso.SetBool("MouvementAvance", false);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            //transform.Translate(Vector3.right * Time.deltaTime * 200, Space.World);
-            animatorPerso.Play("Avance");
-        }        
+            animatorPerso.SetBool("MouvementAvance", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            animatorPerso.SetBool("MouvementAvance", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            animatorPerso.SetBool("MouvementRecule", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.A))
+
+        {
+            animatorPerso.SetBool("MouvementRecule", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            animatorPerso.SetBool("MouvementRecule", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftArrow))
+
+        {
+            animatorPerso.SetBool("MouvementRecule", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            animatorPerso.SetTrigger("Attaque");
+        }
     }
 
     void salut()
