@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -188,7 +188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b4f106474389c5d42aaa42c65a01c793, type: 3}
       propertyPath: m_Name
-      value: kratosNvxUn
+      value: KratosNvxUn
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b4f106474389c5d42aaa42c65a01c793, type: 3}
       propertyPath: m_IsActive
@@ -588,7 +588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c1050c3d99d8ef6448155bad09b9818e, type: 3}
       propertyPath: m_TagString
-      value: joueur
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: c1050c3d99d8ef6448155bad09b9818e, type: 3}
       propertyPath: m_Controller

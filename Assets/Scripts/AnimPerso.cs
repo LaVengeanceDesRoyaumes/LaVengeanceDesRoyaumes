@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimPers : MonoBehaviour
+public class AnimPerso : MonoBehaviour
 {
     public Animator animatorPerso;
     //public GameObject Baton;
@@ -111,7 +111,7 @@ public class AnimPers : MonoBehaviour
         animatorPerso.Play("Bloque");
     }
 
-    /* oncollisitionenter (si detecte un coup) 
+    /* oncollisitionenter (si on détecte un coup) 
     {
         animatorPerso.Play("Coup");
     }
