@@ -11,12 +11,12 @@ public class RandomMovement : MonoBehaviour
     // Direction du mouvement (1 pour droite, -1 pour gauche)
     private int direction = 1;
 
-    // Temps écoulé depuis le dernier changement de direction
+    // Temps ï¿½coulï¿½ depuis le dernier changement de direction
     private float elapsedTime = 0f;
 
     void Update()
     {
-        // Mise à jour de la direction en fonction du temps écoulé
+        // Mise ï¿½ jour de la direction en fonction du temps ï¿½coulï¿½
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= changeDirectionTime)
         {
@@ -24,10 +24,10 @@ public class RandomMovement : MonoBehaviour
             elapsedTime = 0f;
         }
 
-        // Calcul du déplacement en fonction de la direction et de la vitesse
+        // Calcul du dï¿½placement en fonction de la direction et de la vitesse
         float moveZ = direction * speed * Time.deltaTime;
 
-        // Déplacement de l'objet sur l'axe x
+        // Dï¿½placement de l'objet sur l'axe x
         transform.Translate(0f, 0f, moveZ);
     }
 }
