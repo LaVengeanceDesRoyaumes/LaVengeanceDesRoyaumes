@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneMapJingshen.unity
     guid: 41ac82abe645e5649a8dce44f17d728b
   - enabled: 1
-    path: Assets/Scenes/SceneNiveau1Kratos.unity
+    path: Assets/Scenes/SceneNiveau1Jingshen.unity
     guid: 7769f33fb4fa2e5458344a36556ad760
   - enabled: 1
     path: Assets/Scenes/SceneNiveau2Kratos.unity
@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneNiveau4Kratos.unity
     guid: 359e111a2af5643a7aaa54c505b55fa6
   - enabled: 1
-    path: Assets/Scenes/SceneNiveau1Jingshen.unity
+    path: Assets/Scenes/SceneNiveau1Kratos.unity
     guid: 2a2c1fd59af824e148b0d81fd05aa2f7
   - enabled: 1
     path: Assets/Scenes/SceneNiveau2Jingshen.unity
