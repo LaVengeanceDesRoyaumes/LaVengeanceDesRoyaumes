@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b4f106474389c5d42aaa42c65a01c793, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4f106474389c5d42aaa42c65a01c793, type: 3}
       propertyPath: m_LocalScale.x
@@ -651,11 +651,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: c1050c3d99d8ef6448155bad09b9818e, type: 3}
   m_PrefabInstance: {fileID: 956717975}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &956717981 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1050c3d99d8ef6448155bad09b9818e, type: 3}
-  m_PrefabInstance: {fileID: 956717975}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,9 +784,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTimeAttaque: 2
   rigidbodyPerso: {fileID: 1309701282}
-  target: {fileID: 956717981}
-  speed: 10
-  stoppingDistance: 100
+  cible: {fileID: 0}
+  vitesseDeplacement: 0
+  distanceArret: 0
 --- !u!1 &1751524671
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,5 +883,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
