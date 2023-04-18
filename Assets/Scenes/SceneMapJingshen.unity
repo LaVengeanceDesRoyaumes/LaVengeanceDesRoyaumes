@@ -3773,7 +3773,7 @@ GameObject:
   - component: {fileID: 1179195704}
   - component: {fileID: 1179195703}
   m_Layer: 5
-  m_Name: DescriptionDuNiveau
+  m_Name: HistoireTexte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3796,7 +3796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39, y: 67}
+  m_AnchoredPosition: {x: -29, y: 67}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1179195703
@@ -3819,9 +3819,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Description du niveau : Nom \ndu niveau\nNom du niveau Nom du \nniveau
-    \nNom du niveau Nom du niveau\nNom du niveau Nom du niveau\nNom du niveau \nNom
-    du niveau\nNom du niveau Nom du niveau"
+  m_text: "Un jeune soldat est appel\xE9 \xE0 vaincre le roi du royaume ennemi Kratos\u2026
+    ce qui n'est pas une mince affaire. Il prend solennellement la route vers le
+    royaume en question et rencontre un jeune guerrier kratien qui a \xE9t\xE9 envoy\xE9
+    pour l'emp\xEAcher d'atteindre Kratos. Pr\xE9parez-vous ! La route est longue..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 341a7a846018fbf4091ef0a20eaf8852, type: 2}
   m_sharedMaterial: {fileID: -5752615501656400027, guid: 341a7a846018fbf4091ef0a20eaf8852, type: 2}
@@ -3848,10 +3849,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.6
-  m_fontSizeBase: 24.6
+  m_fontSize: 21.55
+  m_fontSizeBase: 21
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -3864,7 +3865,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -3884,7 +3885,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 100.16491, w: 15.767618}
+  m_margin: {x: 0, y: -4.8571777, z: -33.407356, w: -180.94719}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

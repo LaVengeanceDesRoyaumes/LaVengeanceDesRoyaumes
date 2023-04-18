@@ -10,11 +10,11 @@ public class GestionEnnemi : MonoBehaviour
     private Animator animator; // Référence à l'animator
     public Rigidbody rigidbodyPerso; // Rigidbody de l'ennemi
 
-    public Transform target; // La cible à suivre
+    public Transform cible; // La cible à suivre
 
-    public float speed = 5f; // La vitesse de déplacement
+    public float vitesseDeplacement; // La vitesse de déplacement
 
-    public float stoppingDistance = 1f; // La distance à laquelle l'ennemi s'arrête
+    public float distanceArret; // La distance à laquelle l'ennemi s'arrête
 
     void Start()
     {
@@ -27,28 +27,28 @@ public class GestionEnnemi : MonoBehaviour
 
         // Vérifie si la cible est valide
 
-        if (target == null)
+        if (cible == null)
 
             return;
 
 
         // Calcule la distance entre l'AI et la cible
 
-        float distance = Vector3.Distance(transform.position, target.position);
+        float distance = Vector3.Distance(transform.position, cible.position);
 
 
         // Si la distance est supérieure à la distance d'arrêt, continue de se déplacer vers la cible
 
-        if (distance > stoppingDistance)
+        if (distance > distanceArret)
         {
 
             // Calcule la direction vers la cible
 
-            Vector3 direction = (target.position - transform.position).normalized;
+            Vector3 direction = (cible.position - transform.position).normalized;
 
             // Déplace l'AI dans la direction de la cible à la vitesse donnée
 
-            transform.position += direction * speed * Time.deltaTime;
+            transform.position += direction * vitesseDeplacement * Time.deltaTime;
 
             // Animation de marche
             animator.SetBool("MouvementAvance", true);
