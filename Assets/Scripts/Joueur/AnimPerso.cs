@@ -60,7 +60,7 @@ public class AnimPerso : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             Invoke("Bloque", 0);
-            audioSource.clip = sonSwoosh;
+            audioSource.clip = sonBloque;
             audioSource.Play();
         }
 
