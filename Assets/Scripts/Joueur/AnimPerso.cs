@@ -4,11 +4,31 @@ using UnityEngine;
 
 public class AnimPerso : MonoBehaviour
 {
+    [Header("Zone sons personnage")]
+    private AudioSource audioSource;
+    public AudioClip sonSwoosh;
+    public AudioClip sonAttaque;
+    public AudioClip sonBloque;
+    public AudioClip[] sonBlesser;
+    public AudioClip sonMort;
+
+    [Header("Zone animatiom personnage")]
     public Animator animatorPerso;
     //public GameObject Baton;
+
+    [Header("Vitesse et rigidbody personnage")]
     public Rigidbody rigidbodyPerso;
     public float vitesseDeplacement = 100f;
     private float vDeplacement;
+
+  
+
+    private void Awake()
+    {
+        // Récupèrer l'AudioSource du GameObject actuelle
+        audioSource = GetComponent<AudioSource>();
+
+    }
 
 
     // Start is called before the first frame update
@@ -16,6 +36,7 @@ public class AnimPerso : MonoBehaviour
     {
         animatorPerso = GetComponent<Animator>();
         rigidbodyPerso = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -24,16 +45,23 @@ public class AnimPerso : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             Invoke("Attaque", 0);
+            audioSource.clip = sonSwoosh;
+            audioSource.Play();
+            
         }
 
         if (Input.GetKeyDown(KeyCode.K))
         {
             Invoke("Botte", 0);
+            audioSource.clip = sonAttaque;
+            audioSource.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.L))
         {
             Invoke("Bloque", 0);
+            audioSource.clip = sonSwoosh;
+            audioSource.Play();
         }
 
         vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
@@ -79,7 +107,7 @@ public class AnimPerso : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.J))
         {
-            animatorPerso.SetTrigger("Attaque");
+           // animatorPerso.SetTrigger("Attaque");
         }
     }
 
@@ -87,6 +115,22 @@ public class AnimPerso : MonoBehaviour
     {
         Baton.SetActive(true);
     }*/
+
+
+    /*/////////////////////////////////ZONE COLLISION//////////////////////////////*/
+    void OnTriggerEnter(Collider other)
+    {
+        //si je rentre en collision avec l'arme de mon ennemi...
+        if (other.gameObject.tag == "ArmeEnnemi")
+        {
+         //Jouer aléatoirement le son de mon personnage lorsqu'il est blessé   
+            int randomIndex = Random.Range(0, sonBlesser.Length);
+            GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+        }
+    }
+    /*// /////////////////////////////////////////////////////////////////////////////////*/
+
+
 
     void Attaque()
     {

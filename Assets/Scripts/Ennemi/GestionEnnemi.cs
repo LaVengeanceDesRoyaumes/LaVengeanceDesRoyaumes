@@ -5,6 +5,16 @@ using UnityEngine;
 
 public class GestionEnnemi : MonoBehaviour
 {
+    [Header("Zone sons personnage")]
+    private AudioSource audioSource;
+    public AudioClip sonSwoosh;
+    public AudioClip sonAttaque;
+    //public AudioClip sonBloque;
+    public AudioClip[] sonBlesser;
+    public AudioClip sonMort;
+
+
+    [Header("Zone autres")]
     public float delayTimeAttaque = 2f; // Délai avant de lancer l'animation d'attaque
 
     private Animator animator; // Référence à l'animator
@@ -15,6 +25,13 @@ public class GestionEnnemi : MonoBehaviour
     public float vitesseDeplacement; // La vitesse de déplacement
 
     public float distanceArret; // La distance à laquelle l'ennemi s'arrête
+
+    private void Awake()
+    {
+        // Récupèrer l'AudioSource du GameObject actuelle
+        audioSource = GetComponent<AudioSource>();
+
+    }
 
     void Start()
     {
@@ -69,8 +86,26 @@ public class GestionEnnemi : MonoBehaviour
         // Attente du délai
         yield return new WaitForSeconds(delayTimeAttaque);
 
+        //Activer l'arme (le rendre visible)
+
         // Lancement de l'animation
         animator.SetTrigger("Attaque");
+        audioSource.clip = sonSwoosh;
+        audioSource.Play();
     }
+
+
+    /*/////////////////////////////////ZONE COLLISION//////////////////////////////*/
+    void OnTriggerEnter(Collider other)
+    {
+        //si je rentre en collision avec l'arme de mon ennemi...
+        if (other.gameObject.tag == "ArmeMonPerso")
+        {
+            //Jouer aléatoirement le son de mon personnage lorsqu'il est blessé   
+            int randomIndex = Random.Range(0, sonBlesser.Length);
+            GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+        }
+    }
+    /*// /////////////////////////////////////////////////////////////////////////////////*/
 
 }

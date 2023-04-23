@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - ennemi
+  - ArmeEnnemi
+  - ArmeMonPerso
   layers:
   - Default
   - TransparentFX
