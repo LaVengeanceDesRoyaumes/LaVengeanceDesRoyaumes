@@ -2029,7 +2029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a49794c2dfb4124cb0038dd0fbfec2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioPrincipale: {fileID: 8300000, guid: 4b627ec3098d40e4294b00a6cd9e7af0, type: 3}
+  audioPrincipale: {fileID: 8300000, guid: b2ae8953d3af3e444ada1c1a38dadcea, type: 3}
   audioJinNvxUn: {fileID: 8300000, guid: e69c9ad5c4289e84caf6f3f86cea42ca, type: 3}
   audioJinNvxDeux: {fileID: 8300000, guid: 244d83aa1c88dd84aa2eedda4ce72a2e, type: 3}
   audioJinNvxTrois: {fileID: 8300000, guid: c05b7f18275e0a3469fcedd4bcef13dd, type: 3}
@@ -2064,7 +2064,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2138,7 +2138,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.577
       inSlope: 0
       outSlope: 0
       tangentMode: 0
