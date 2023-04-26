@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class AnimPerso : MonoBehaviour
+public class GestionPerso : MonoBehaviour
 {
     [Header("Zone sons personnage")]
     private AudioSource audioSource;
@@ -27,98 +27,107 @@ public class AnimPerso : MonoBehaviour
     public float degats = 10f; // les dégâts infligés aux ennemis
     public Image barreDeVie; // la barre de vie de l'ennemi
 
+    [Header("Zone gestion de partie")]
+    public bool finPartie = false;
+    public GameObject MenuVictoire;
+    static public bool partieGagner;
+
     private void Awake()
     {
         // Récupèrer l'AudioSource du GameObject actuelle
         audioSource = GetComponent<AudioSource>();
-
     }
-
 
     // Start is called before the first frame update
     void Start()
     {
         animatorPerso = GetComponent<Animator>();
         rigidbodyPerso = GetComponent<Rigidbody>();
-
+        finPartie = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (!finPartie)
         {
-            Invoke("Attaque", 0);
-            audioSource.clip = sonSwoosh;
-            audioSource.Play();
-            
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                Invoke("Attaque", 0);
+                audioSource.clip = sonSwoosh;
+                audioSource.Play();
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                Invoke("Botte", 0);
+                audioSource.clip = sonAttaque;
+                audioSource.Play();
+            }
+
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                Invoke("Bloque", 0);
+                audioSource.clip = sonBloque;
+                audioSource.Play();
+            }
+
+            vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
+            //rigidbodyPerso.velocity = transform.forward * vDeplacement;
+            rigidbodyPerso.velocity = new Vector2(vDeplacement, 0);
+
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                animatorPerso.SetBool("MouvementAvance", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.D))
+            {
+                animatorPerso.SetBool("MouvementAvance", false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                animatorPerso.SetBool("MouvementAvance", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                animatorPerso.SetBool("MouvementAvance", false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                animatorPerso.SetBool("MouvementRecule", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.A))
+
+            {
+                animatorPerso.SetBool("MouvementRecule", false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                animatorPerso.SetBool("MouvementRecule", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftArrow))
+
+            {
+                animatorPerso.SetBool("MouvementRecule", false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                // animatorPerso.SetTrigger("Attaque");
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (pointsDeVie <= 0)
         {
-            Invoke("Botte", 0);
-            audioSource.clip = sonAttaque;
-            audioSource.Play();
-        }
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Invoke("Bloque", 0);
-            audioSource.clip = sonBloque;
-            audioSource.Play();
-        }
-
-        vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
-        rigidbodyPerso.velocity = transform.forward * vDeplacement;
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            animatorPerso.SetBool("MouvementAvance", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.D))
-        {
-            animatorPerso.SetBool("MouvementAvance", false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            animatorPerso.SetBool("MouvementAvance", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            animatorPerso.SetBool("MouvementAvance", false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            animatorPerso.SetBool("MouvementRecule", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.A))
-
-        {
-            animatorPerso.SetBool("MouvementRecule", false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            animatorPerso.SetBool("MouvementRecule", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftArrow))
-
-        {
-            animatorPerso.SetBool("MouvementRecule", false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-           // animatorPerso.SetTrigger("Attaque");
+            finPartie = true;
+            MenuVictoire.SetActive(true);
+            partieGagner = true;
         }
     }
-
-    /*void batonRetour()
-    {
-        Baton.SetActive(true);
-    }*/
 
 
     /*/////////////////////////////////ZONE COLLISION//////////////////////////////*/

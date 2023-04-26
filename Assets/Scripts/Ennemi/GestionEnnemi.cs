@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-
 public class GestionEnnemi : MonoBehaviour
 {
     [Header("Zone sons personnage")]
@@ -21,12 +20,17 @@ public class GestionEnnemi : MonoBehaviour
     public bool aiAttaque = false;
 
     [Header("Zone deplacement et animation")]
-    public float delayTimeAttaque = 2f; // Délai avant de lancer l'animation d'attaque
+    public float delayTimeAttaque = 1f; // Délai avant de lancer l'animation d'attaque
     private Animator animator; // Référence à l'animator
     public Rigidbody rigidbodyPerso; // Rigidbody de l'ennemi
     public Transform cible; // La cible à suivre
     public float vitesseDeplacement; // La vitesse de déplacement
     public float distanceArret; // La distance à laquelle l'ennemi s'arrête
+
+    [Header("Zone gestion de partie")]
+    public bool finPartie = false;
+    public GameObject MenuDefaite;
+    static public bool partiePerdu;
 
     private void Awake()
     {
@@ -38,52 +42,49 @@ public class GestionEnnemi : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidbodyPerso = GetComponent<Rigidbody>();
+        finPartie = false;
     }
 
     private void Update()
     {
-        // Vérifie si la cible est valide
-        if (cible == null)
-        return;
-        // Calcule la distance entre l'AI et la cible
-        float distance = Vector3.Distance(transform.position, cible.position);
-        // Si la distance est supérieure à la distance d'arrêt, continue de se déplacer vers la cible
-
-        if (distance > distanceArret)
+        if (!finPartie)
         {
-            // Calcule la direction vers la cible
-            Vector3 direction = (cible.position - transform.position).normalized;
-            // Déplace l'AI dans la direction de la cible à la vitesse donnée
-            transform.position += direction * vitesseDeplacement * Time.deltaTime;
-            // Animation de marche
-            animator.SetBool("MouvementAvance", true);
+            // Vérifie si la cible est valide
+            if (cible == null)
+                return;
+            // Calcule la distance entre l'AI et la cible
+            float distance = Vector3.Distance(transform.position, cible.position);
+
+            // Si la distance est supérieure à la distance d'arrêt, continue de se déplacer vers la cible
+            if (distance > distanceArret)
+            {
+                // Calcule la direction vers la cible
+                Vector3 direction = (cible.position - transform.position).normalized;
+                // Déplace l'AI dans la direction de la cible à la vitesse donnée
+                transform.position += direction * vitesseDeplacement * Time.deltaTime;
+                // Animation de marche
+                animator.SetBool("MouvementAvance", true);
+            }
+
+            else
+            {
+                animator.SetBool("MouvementAvance", false);
+            }
+
+            // Lancement de la coroutine pour jouer l'animation après un certain temps
+            StartCoroutine(PlayAttaqueAfterDelay());
+
         }
 
-        else
+        if (pointsDeVie <= 0)
         {
-            animator.SetBool("MouvementAvance", false);
+            finPartie = true;
+            MenuDefaite.SetActive(true);
+            partiePerdu = true;
         }
-
-        // Lancement de la coroutine pour jouer l'animation après un certain temps
-        StartCoroutine(PlayAttaqueAfterDelay());
     }
 
-    IEnumerator PlayAttaqueAfterDelay()
-    {
-        // Attente du délai
-        yield return new WaitForSeconds(delayTimeAttaque);
-
-        //Activer l'arme (le rendre visible)
-
-        // Lancement de l'animation
-        animator.SetTrigger("Attaque");
-        audioSource.clip = sonSwoosh;
-        audioSource.Play();
-        aiAttaque = true;
-    }
-
-
-    /*/////////////////////////////////ZONE COLLISION//////////////////////////////*/
+    /*/////////////////////////////////ZONE COLLISIONS//////////////////////////////*/
     void OnTriggerEnter(Collider other)
     {
         //si je rentre en collision avec l'arme de mon ennemi...
@@ -98,7 +99,7 @@ public class GestionEnnemi : MonoBehaviour
     {
         if (other.gameObject.CompareTag("joueur"))
         {
-            if (aiAttaque==true)
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attaque"))
             {
                 pointsDeVie -= degats; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
@@ -107,6 +108,23 @@ public class GestionEnnemi : MonoBehaviour
             }
 
         }
+    }
+
+    /*/////////////////////////////////ZONE FONCTIONS//////////////////////////////*/
+    IEnumerator PlayAttaqueAfterDelay()
+    {
+        // Attente du délai
+        yield return new WaitForSeconds(delayTimeAttaque);
+
+        // Lancement de l'animation
+        animator.SetTrigger("Attaque");
+        // Rendre la variable attaque true
+        aiAttaque = true;
+        // Jouer les sons
+        audioSource.clip = sonSwoosh;
+        audioSource.Play();
+        // Rendre la variable attaque false
+        aiAttaque = false;
     }
 
 }
