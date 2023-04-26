@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class AnimPerso : MonoBehaviour
@@ -12,7 +13,7 @@ public class AnimPerso : MonoBehaviour
     public AudioClip[] sonBlesser;
     public AudioClip sonMort;
 
-    [Header("Zone animatiom personnage")]
+    [Header("Zone animation personnage")]
     public Animator animatorPerso;
     //public GameObject Baton;
 
@@ -21,7 +22,10 @@ public class AnimPerso : MonoBehaviour
     public float vitesseDeplacement = 100f;
     private float vDeplacement;
 
-  
+    [Header("Zone detection des coups")]
+    public float pointsDeVie = 100f; // points de vie du personnage
+    public float degats = 10f; // les dégâts infligés aux ennemis
+    public Image barreDeVie; // la barre de vie de l'ennemi
 
     private void Awake()
     {
@@ -128,10 +132,20 @@ public class AnimPerso : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
         }
     }
-    /*// /////////////////////////////////////////////////////////////////////////////////*/
-
-
-
+     void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("ennemi"))
+        {
+            if (Input.GetKey(KeyCode.J))
+            {
+                pointsDeVie -= degats; // soustraire les dégâts infligés aux points de vie du personnage
+                float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
+                barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
+                print("Vous avez frappé l'ennemi ! Il lui reste " + pointsDeVie + " points de vie.");
+            }
+        }
+    }
+    /*/////////////////////////////////ZONE FONCTIONS/////////////////////////////////*/
     void Attaque()
     {
         animatorPerso.Play("Attaque");
@@ -152,9 +166,9 @@ public class AnimPerso : MonoBehaviour
         animatorPerso.Play("Coup");
     }*/
 
-    void DectionCoup()
+    /*void DonnerCoup()
     {
-
-    }
+        degats = 10f;
+    }*/
 }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 
@@ -13,24 +14,24 @@ public class GestionEnnemi : MonoBehaviour
     public AudioClip[] sonBlesser;
     public AudioClip sonMort;
 
+    [Header("Zone detection des coups")]
+    public float pointsDeVie = 100f; // points de vie du personnage
+    public float degats = 10f; // les dégâts infligés aux ennemis
+    public Image barreDeVie; // la barre de vie de l'ennemi
+    public bool aiAttaque = false;
 
-    [Header("Zone autres")]
+    [Header("Zone deplacement et animation")]
     public float delayTimeAttaque = 2f; // Délai avant de lancer l'animation d'attaque
-
     private Animator animator; // Référence à l'animator
     public Rigidbody rigidbodyPerso; // Rigidbody de l'ennemi
-
     public Transform cible; // La cible à suivre
-
     public float vitesseDeplacement; // La vitesse de déplacement
-
     public float distanceArret; // La distance à laquelle l'ennemi s'arrête
 
     private void Awake()
     {
         // Récupèrer l'AudioSource du GameObject actuelle
         audioSource = GetComponent<AudioSource>();
-
     }
 
     void Start()
@@ -41,32 +42,19 @@ public class GestionEnnemi : MonoBehaviour
 
     private void Update()
     {
-
         // Vérifie si la cible est valide
-
         if (cible == null)
-
-            return;
-
-
+        return;
         // Calcule la distance entre l'AI et la cible
-
         float distance = Vector3.Distance(transform.position, cible.position);
-
-
         // Si la distance est supérieure à la distance d'arrêt, continue de se déplacer vers la cible
 
         if (distance > distanceArret)
         {
-
             // Calcule la direction vers la cible
-
             Vector3 direction = (cible.position - transform.position).normalized;
-
             // Déplace l'AI dans la direction de la cible à la vitesse donnée
-
             transform.position += direction * vitesseDeplacement * Time.deltaTime;
-
             // Animation de marche
             animator.SetBool("MouvementAvance", true);
         }
@@ -78,7 +66,6 @@ public class GestionEnnemi : MonoBehaviour
 
         // Lancement de la coroutine pour jouer l'animation après un certain temps
         StartCoroutine(PlayAttaqueAfterDelay());
-
     }
 
     IEnumerator PlayAttaqueAfterDelay()
@@ -92,6 +79,7 @@ public class GestionEnnemi : MonoBehaviour
         animator.SetTrigger("Attaque");
         audioSource.clip = sonSwoosh;
         audioSource.Play();
+        aiAttaque = true;
     }
 
 
@@ -106,6 +94,19 @@ public class GestionEnnemi : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
         }
     }
-    /*// /////////////////////////////////////////////////////////////////////////////////*/
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("joueur"))
+        {
+            if (aiAttaque==true)
+            {
+                pointsDeVie -= degats; // soustraire les dégâts infligés aux points de vie du personnage
+                float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
+                barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
+                print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
+            }
+
+        }
+    }
 
 }
