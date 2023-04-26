@@ -132,7 +132,7 @@ public class AnimPerso : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
         }
     }
-    private void OnCollisionEnter(Collision other)
+     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("ennemi"))
         {
@@ -143,13 +143,9 @@ public class AnimPerso : MonoBehaviour
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("Vous avez frappé l'ennemi ! Il lui reste " + pointsDeVie + " points de vie.");
             }
-
         }
     }
-    /*// /////////////////////////////////////////////////////////////////////////////////*/
-
-
-
+    /*/////////////////////////////////ZONE FONCTIONS/////////////////////////////////*/
     void Attaque()
     {
         animatorPerso.Play("Attaque");
@@ -170,9 +166,9 @@ public class AnimPerso : MonoBehaviour
         animatorPerso.Play("Coup");
     }*/
 
-    void DectionCoup()
+    /*void DonnerCoup()
     {
-
-    }
+        degats = 10f;
+    }*/
 }
 

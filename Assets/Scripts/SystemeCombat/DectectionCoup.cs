@@ -23,10 +23,10 @@ public class DectectionCoup : MonoBehaviour
     }
 
     // Fonction pour infliger des dégâts aux ennemis
-    private void DonnerCoup()
+    /*private void DonnerCoup()
     {
         degats = 10f;
-    }
+    }*/
 
     /*private void Update()
     {
