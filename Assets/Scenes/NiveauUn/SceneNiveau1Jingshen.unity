@@ -7365,7 +7365,7 @@ MonoBehaviour:
   sonBlesser: []
   sonMort: {fileID: 8300000, guid: 87d5e5e9bf47acf4a9bc4336e2da39db, type: 3}
   pointsDeVie: 100
-  degats: 2
+  degats: 3
   barreDeVie: {fileID: 504600114}
   aiAttaque: 0
   delayTimeAttaque: 1
