@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 
@@ -13,6 +14,10 @@ public class GestionEnnemi : MonoBehaviour
     public AudioClip[] sonBlesser;
     public AudioClip sonMort;
 
+    [Header("Zone detection des coups")]
+    public float pointsDeVie = 100f; // points de vie du personnage
+    public float degats = 10f; // les dégâts infligés aux ennemis
+    public Image barreDeVie; // la barre de vie de l'ennemi
 
     [Header("Zone autres")]
     public float delayTimeAttaque = 2f; // Délai avant de lancer l'animation d'attaque

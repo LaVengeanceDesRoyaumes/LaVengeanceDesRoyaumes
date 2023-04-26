@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17225169, g: 0.4646652, b: 0.49285764, a: 1}
+  m_IndirectSpecularColor: {r: 0.17225231, g: 0.46466595, b: 0.49285987, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -1773,12 +1773,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506339419}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.1239588, y: 0.07138491, z: 0.07138495}
   m_Center: {x: -0.0000038146973, y: 0, z: 0}
---- !u!114 &506339427
+--- !u!114 &506339431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1791,7 +1791,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsDeVie: 100
-  degats: 1
+  degats: 10
+  barreDeVie: {fileID: 248439154}
 --- !u!1001 &513595377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4994,7 +4995,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241020571}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.1239588, y: 0.07138491, z: 0.07138495}
@@ -7216,20 +7217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointDancrage: {fileID: 1094374047}
   arme: {fileID: 506339419}
---- !u!114 &1713302693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713302685}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b5c3a99a3cc77c4caa1f3d6330ddfbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointsDeVie: 100
-  degats: 10
 --- !u!82 &1713302694
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7326,6 +7313,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1713302695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713302685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5c3a99a3cc77c4caa1f3d6330ddfbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsDeVie: 100
+  degats: 5
+  barreDeVie: {fileID: 248439154}
 --- !u!1 &1734490538 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f62b3051e7ddaf7419ac64d49c173627, type: 3}

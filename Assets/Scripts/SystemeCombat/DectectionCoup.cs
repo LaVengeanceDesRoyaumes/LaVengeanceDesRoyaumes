@@ -1,68 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DectectionCoup : MonoBehaviour
 {
     public float pointsDeVie = 100f; // points de vie du personnage
-    public float degats = 10; // les dégâts infligés aux ennemis
+    public float degats = 10f; // les dégâts infligés aux ennemis
+    public Image barreDeVie; // la barre de vie de l'ennemi
 
-    void Update()
+    private void OnCollisionEnter(Collision other)
     {
-
-    }
-
-    private void OnCollisionStay(Collision other)
-    {
-        if (other.gameObject.tag == "ennemi")
+        if (other.gameObject.CompareTag("ennemi"))
         {
-            print("Vous avez frappé l'ennemi ! Il lui reste " + pointsDeVie + " points de vie.");
-            if (Input.GetKeyDown(KeyCode.J))
+            if (Input.GetKey(KeyCode.J))
             {
                 pointsDeVie -= degats; // soustraire les dégâts infligés aux points de vie du personnage
-                DonnerCoup();
+                float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
+                barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
+                print("Vous avez frappé l'ennemi ! Il lui reste " + pointsDeVie + " points de vie.");
             }
+
         }
     }
 
     // Fonction pour infliger des dégâts aux ennemis
     private void DonnerCoup()
     {
-        degats = 10;
+        degats = 10f;
     }
 
-}
-
-/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class DectectionCoup : MonoBehaviour
-{
-    public float pointsDeVie = 100f; // point de vie du personnage
-    public float degats = 10; // les dégâts infligés aux ennemis
-
-    // Update is called once per frame
-
-
-    void OnCollisionEnter(Collision other)
+    /*private void Update()
     {
-        if (other.gameObject.tag == "ennemi")
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            print("Vous avez frappé l'ennemi ! Il lui reste " + pointsDeVie + " points de vie.");
-
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                DonnerCoup();
-            }
-
+            DonnerCoup();
         }
-    }
-
-    private void DonnerCoup()
-    {
-        degats = 10;
-    }
-}*/
+    }*/
+}
 
 
