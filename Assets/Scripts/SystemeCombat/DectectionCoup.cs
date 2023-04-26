@@ -18,7 +18,6 @@ public class DectectionCoup : MonoBehaviour
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("Vous avez frappé l'ennemi ! Il lui reste " + pointsDeVie + " points de vie.");
             }
-
         }
     }
 
