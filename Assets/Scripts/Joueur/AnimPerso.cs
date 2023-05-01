@@ -118,7 +118,7 @@ public class AnimPerso : MonoBehaviour
 
 
     /*/////////////////////////////////ZONE COLLISION//////////////////////////////*/
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         //si je rentre en collision avec l'arme de mon ennemi...
         if (other.gameObject.tag == "ArmeEnnemi")
@@ -147,10 +147,6 @@ public class AnimPerso : MonoBehaviour
         animatorPerso.Play("Bloque");
     }
 
-    /* oncollisitionenter (si on détecte un coup) 
-    {
-        animatorPerso.Play("Coup");
-    }*/
 
     void DectionCoup()
     {

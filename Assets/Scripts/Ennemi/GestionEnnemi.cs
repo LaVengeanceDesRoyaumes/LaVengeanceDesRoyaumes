@@ -93,10 +93,10 @@ public class GestionEnnemi : MonoBehaviour
         audioSource.clip = sonSwoosh;
         audioSource.Play();
     }
+  
 
-
-    /*/////////////////////////////////ZONE COLLISION//////////////////////////////*/
-    void OnTriggerEnter(Collider other)
+/*/////////////////////////////////ZONE COLLISION//////////////////////////////*/
+void OnCollisionEnter (Collision other)
     {
         //si je rentre en collision avec l'arme de mon ennemi...
         if (other.gameObject.tag == "ArmeMonPerso")
@@ -107,5 +107,5 @@ public class GestionEnnemi : MonoBehaviour
         }
     }
     /*// /////////////////////////////////////////////////////////////////////////////////*/
-
+    
 }
