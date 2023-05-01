@@ -30,7 +30,7 @@ public class GestionPerso : MonoBehaviour
     [Header("Zone gestion de partie")]
     public bool finPartie = false;
     public GameObject MenuVictoire;
-    static public bool partieGagner;
+    public static bool partieGagner;
 
     private void Awake()
     {
@@ -120,37 +120,61 @@ public class GestionPerso : MonoBehaviour
                 // animatorPerso.SetTrigger("Attaque");
             }
         }
+        if (finPartie == true)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
 
         if (pointsDeVie <= 0)
         {
             finPartie = true;
             MenuVictoire.SetActive(true);
             partieGagner = true;
+            audioSource.clip = sonMort;
+            audioSource.Play();
         }
     }
 
 
     /*/////////////////////////////////ZONE COLLISION//////////////////////////////*/
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         //si je rentre en collision avec l'arme de mon ennemi...
         if (other.gameObject.tag == "ArmeEnnemi")
         {
-         //Jouer aléatoirement le son de mon personnage lorsqu'il est blessé   
-            int randomIndex = Random.Range(0, sonBlesser.Length);
-            GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+
+
         }
-    }
+    }*/
      void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("ennemi"))
         {
             if (Input.GetKey(KeyCode.J))
             {
+                /*vie*/
                 pointsDeVie -= degats; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("Vous avez frappé l'ennemi ! Il lui reste " + pointsDeVie + " points de vie.");
+                /*sons*/
+                int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
+                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+            }
+            if (Input.GetKey(KeyCode.K))
+            {
+                /*vie*/
+                pointsDeVie -= degats; // soustraire les dégâts infligés aux points de vie du personnage
+                float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
+                barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
+                print("Vous avez frappé l'ennemi ! Il lui reste " + pointsDeVie + " points de vie.");
+                /*sons*/
+                int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
+                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
             }
         }
     }
