@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GestionPartie : MonoBehaviour
 {
-    public GameObject MenuDefaite;
-    public GameObject MenuVictoire;
+    public GameObject[] vieCoeurs;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +15,8 @@ public class GestionPartie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GestionEnnemi.partiePerdue == true) {
+            vieCoeurs[2].SetActive(false);
+        }
     }
 }
