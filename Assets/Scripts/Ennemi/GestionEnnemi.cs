@@ -30,7 +30,7 @@ public class GestionEnnemi : MonoBehaviour
     [Header("Zone gestion de partie")]
     public bool finPartie = false;
     public GameObject MenuDefaite;
-    static public bool partiePerdu;
+    public static bool partiePerdu;
 
     private void Awake()
     {
@@ -73,7 +73,6 @@ public class GestionEnnemi : MonoBehaviour
 
             // Lancement de la coroutine pour jouer l'animation après un certain temps
             StartCoroutine(PlayAttaqueAfterDelay());
-
         }
 
         if (pointsDeVie <= 0)
@@ -81,20 +80,21 @@ public class GestionEnnemi : MonoBehaviour
             finPartie = true;
             MenuDefaite.SetActive(true);
             partiePerdu = true;
+            audioSource.clip = sonMort;
+            audioSource.Play();
         }
     }
 
     /*/////////////////////////////////ZONE COLLISIONS//////////////////////////////*/
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         //si je rentre en collision avec l'arme de mon ennemi...
         if (other.gameObject.tag == "ArmeMonPerso")
         {
             //Jouer aléatoirement le son de mon personnage lorsqu'il est blessé   
-            int randomIndex = Random.Range(0, sonBlesser.Length);
-            GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+
         }
-    }
+    }*/
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("joueur"))
@@ -105,6 +105,8 @@ public class GestionEnnemi : MonoBehaviour
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
+                int randomIndex = Random.Range(0, sonBlesser.Length);
+                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
             }
 
         }
@@ -126,5 +128,25 @@ public class GestionEnnemi : MonoBehaviour
         // Rendre la variable attaque false
         aiAttaque = false;
     }
+    /*IEnumerator PlaKickAfterDelay()
+    {
+        // Attente du délai
+        yield return new WaitForSeconds(delayTimeKick);
 
+        // Lancement de l'animation
+        int randomNumber = Random.Range(1, 4);
+        animator.SetTrigger("Kick");
+
+        // Rendre la variable attaque true
+        aiAttaque = true;
+        // Jouer les sons
+        audioSource.clip = sonSwoosh;
+        audioSource.Play();
+        // Rendre la variable attaque false
+        aiAttaque = false;
+    }*/
+    /*void DonnerCoup()
+    {
+    degats = 10f;
+    }*/
 }
