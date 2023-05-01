@@ -20,18 +20,4 @@ public class BtnFinPartie : MonoBehaviour
             SceneManager.LoadScene("SceneMapKratos");
         }
     }
-
-    public void Rejouer()
-    {
-        /*if (partiGagner == true) 
-         * { 
-         * MenuVictoire.SetActive(false);
-         * }
-         * 
-         *else if (partiGagner == false) 
-         *{
-         * MenuDefaite.SetActive(false);
-         *}
-        */
-    }
 }
