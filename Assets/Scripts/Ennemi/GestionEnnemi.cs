@@ -30,7 +30,7 @@ public class GestionEnnemi : MonoBehaviour
     [Header("Zone gestion de partie")]
     public bool finPartie = false;
     public GameObject MenuDefaite;
-    static public bool partiePerdue;
+    static public bool partiePerdue = false;
 
     private void Awake()
     {

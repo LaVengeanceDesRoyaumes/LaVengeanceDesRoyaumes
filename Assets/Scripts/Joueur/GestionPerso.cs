@@ -30,7 +30,7 @@ public class GestionPerso : MonoBehaviour
     [Header("Zone gestion de partie")]
     public bool finPartie = false;
     public GameObject MenuVictoire;
-    static public bool partieGagnee;
+    static public bool partieGagnee = false;
 
     private void Awake()
     {
