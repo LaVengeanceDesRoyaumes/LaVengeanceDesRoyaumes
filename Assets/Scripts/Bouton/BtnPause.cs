@@ -12,7 +12,7 @@ public class BtnPause : MonoBehaviour
     public void OuvrirMenuPause()
     {
         MenuPause.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
     }
 
     // retour a la map
@@ -33,7 +33,7 @@ public class BtnPause : MonoBehaviour
     public void SortirMenuPause()
     {
         MenuPause.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
     }
 
     // Menu Option

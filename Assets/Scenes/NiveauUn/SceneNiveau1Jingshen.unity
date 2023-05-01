@@ -7142,7 +7142,8 @@ MonoBehaviour:
   rigidbodyPerso: {fileID: 1713302688}
   vitesseDeplacement: 100
   pointsDeVie: 100
-  degats: 5
+  degats: 4
+  degatsBotte: 5
   barreDeVie: {fileID: 248439154}
   finPartie: 0
   MenuVictoire: {fileID: 88109931}
@@ -7375,8 +7376,7 @@ MonoBehaviour:
   degats: 2
   barreDeVie: {fileID: 504600114}
   aiAttaque: 0
-  delayTimeAttaque: 1
-  delayTimeKick: 2
+  delayTimeAttaque: 0.4
   rigidbodyPerso: {fileID: 1734490539}
   cible: {fileID: 1713302690}
   vitesseDeplacement: 1e-35

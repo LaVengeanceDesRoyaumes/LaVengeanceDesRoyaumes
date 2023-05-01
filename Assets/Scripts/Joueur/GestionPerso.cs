@@ -24,7 +24,8 @@ public class GestionPerso : MonoBehaviour
 
     [Header("Zone detection des coups")]
     public float pointsDeVie = 100f; // points de vie du personnage
-    public float degats = 10f; // les dégâts infligés aux ennemis
+    public float degats = 3f; // les dégâts infligés aux ennemis
+    public float degatsBotte = 4f; // les dégâts infligés aux ennemis
     public Image barreDeVie; // la barre de vie de l'ennemi
 
     [Header("Zone gestion de partie")]
@@ -122,11 +123,11 @@ public class GestionPerso : MonoBehaviour
         }
         if (finPartie == true)
         {
-            Time.timeScale = 0;
+           Time.timeScale = 0;
         }
         else
         {
-            Time.timeScale = 1;
+           Time.timeScale = 1;
         }
 
         if (pointsDeVie <= 0)
@@ -168,7 +169,7 @@ public class GestionPerso : MonoBehaviour
             if (Input.GetKey(KeyCode.K))
             {
                 /*vie*/
-                pointsDeVie -= degats; // soustraire les dégâts infligés aux points de vie du personnage
+                pointsDeVie -= degatsBotte; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("Vous avez frappé l'ennemi ! Il lui reste " + pointsDeVie + " points de vie.");
@@ -193,15 +194,5 @@ public class GestionPerso : MonoBehaviour
     {
         animatorPerso.Play("Bloque");
     }
-
-    /* oncollisitionenter (si on détecte un coup) 
-    {
-        animatorPerso.Play("Coup");
-    }*/
-
-    /*void DonnerCoup()
-    {
-        degats = 10f;
-    }*/
 }
 

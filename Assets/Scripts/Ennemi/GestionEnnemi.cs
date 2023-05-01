@@ -21,13 +21,11 @@ public class GestionEnnemi : MonoBehaviour
 
     [Header("Zone deplacement et animation")]
     public float delayTimeAttaque = 1f; // Délai avant de lancer l'animation d'attaque
-    public float delayTimeKick = 1f; // Délai avant de lancer l'animation d'attaque
     private Animator animator; // Référence à l'animator
     public Rigidbody rigidbodyPerso; // Rigidbody de l'ennemi
     public Transform cible; // La cible à suivre
     public float vitesseDeplacement; // La vitesse de déplacement
     public float distanceArret; // La distance à laquelle l'ennemi s'arrête
-    public float[] lesAnimations;
 
     [Header("Zone gestion de partie")]
     public bool finPartie = false;
