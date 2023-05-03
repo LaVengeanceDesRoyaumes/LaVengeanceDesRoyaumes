@@ -30,7 +30,7 @@ public class GestionEnnemi : MonoBehaviour
     [Header("Zone gestion de partie")]
     public bool finPartie = false;
     public GameObject MenuDefaite;
-    public static bool partiePerdu;
+    public static bool partiePerdue = false;
 
     private void Awake()
     {
@@ -79,7 +79,7 @@ public class GestionEnnemi : MonoBehaviour
         {
             finPartie = true;
             MenuDefaite.SetActive(true);
-            partiePerdu = true;
+            partiePerdue = true;
             audioSource.clip = sonMort;
             audioSource.Play();
         }
