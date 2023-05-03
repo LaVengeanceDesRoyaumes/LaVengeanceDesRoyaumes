@@ -1,9 +1,69 @@
 fileFormatVersion: 2
-guid: d8db052a243b040baab4edc1e2988567
+guid: 9d08006961e4d4360a6642928958e483
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 1941b1ed.dds
+    second: {fileID: 2100000, guid: 3e043c959999241dfa30c6c5951c4c67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 223186e5.dds
+    second: {fileID: 2100000, guid: e292e237c472c4e06b121346c17dbffb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 4600e344.dds
+    second: {fileID: 2100000, guid: 650ebc1127e3f451b9d122e360caaadf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: e5dca369.dds
+    second: {fileID: 2100000, guid: 88d88fc56c1544f75a4435a79b8e268e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: f35dd889.dds
+    second: {fileID: 2100000, guid: cfd505bf29c7f407f988ef99d97ce6dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fbf3f181.dds
+    second: {fileID: 2100000, guid: fafd13132c38c467bbf0ff9225ea8de1, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1941b1ed
+    second: {fileID: 2800000, guid: 5d7184a65cd5b4228b27da1835eb4af7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 223186e5
+    second: {fileID: 2800000, guid: aecf0db0bea994b01a2daa0a9c12f942, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 4600e344
+    second: {fileID: 2800000, guid: 26427e3cca9184c3da8ac9dab2c07dfa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: e5dca369
+    second: {fileID: 2800000, guid: 60fad1f90dc514206879ae393dbe15b7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: f35dd889
+    second: {fileID: 2800000, guid: dfde4590b36b54af285729b7cf5e2315, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fbf3f181
+    second: {fileID: 2800000, guid: 48afffc747af24034b530ba8b20698f4, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +95,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 15
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -88,7 +148,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.38099998
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
