@@ -15,13 +15,17 @@ public class GestionEnnemi : MonoBehaviour
 
     [Header("Zone detection des coups")]
     public float pointsDeVie = 100f; // points de vie du personnage
-    public float degats = 10f; // les dégâts infligés aux ennemis
+    public float degats0 = 10f; // les dégâts infligés aux ennemis
+    public float degats2 = 10f; // les dégâts infligés aux ennemis
+    public float degats1 = 10f; // les dégâts infligés aux ennemis
+    public float degats3 = 10f; // les dégâts infligés aux ennemis
     public Image barreDeVie; // la barre de vie de l'ennemi
     public bool aiAttaque = false;
 
     [Header("Zone deplacement et animation")]
-    public float delayTimeAttaque = 1f; // Délai avant de lancer l'animation d'attaque
+    public int delayTimeAttaque = 1; // Délai avant de lancer l'animation d'attaque
     private Animator animator; // Référence à l'animator
+    public Animator animatorJoueur; // Référence à l'animator du joueur
     public Rigidbody rigidbodyPerso; // Rigidbody de l'ennemi
     public Transform cible; // La cible à suivre
     public float vitesseDeplacement; // La vitesse de déplacement
@@ -31,6 +35,8 @@ public class GestionEnnemi : MonoBehaviour
     public bool finPartie = false;
     public GameObject MenuDefaite;
     public static bool partiePerdu;
+
+    public int numeroA=3;
 
     private void Awake()
     {
@@ -43,6 +49,8 @@ public class GestionEnnemi : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidbodyPerso = GetComponent<Rigidbody>();
         finPartie = false;
+        // Lancement de la coroutine pour jouer l'animation après un certain temps
+        InvokeRepeating("PlayAttaqueAfterDelay", 0, delayTimeAttaque);
     }
 
     private void Update()
@@ -54,7 +62,6 @@ public class GestionEnnemi : MonoBehaviour
                 return;
             // Calcule la distance entre l'AI et la cible
             float distance = Vector3.Distance(transform.position, cible.position);
-
             // Si la distance est supérieure à la distance d'arrêt, continue de se déplacer vers la cible
             if (distance > distanceArret)
             {
@@ -70,9 +77,7 @@ public class GestionEnnemi : MonoBehaviour
             {
                 animator.SetBool("MouvementAvance", false);
             }
-
-            // Lancement de la coroutine pour jouer l'animation après un certain temps
-            StartCoroutine(PlayAttaqueAfterDelay());
+            //InvokeRepeating("CoupAleatoire", delayTimeAttaque, delayTimeAttaque);
         }
 
         if (pointsDeVie <= 0)
@@ -101,25 +106,53 @@ public class GestionEnnemi : MonoBehaviour
         {
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attaque"))
             {
-                pointsDeVie -= degats; // soustraire les dégâts infligés aux points de vie du personnage
+                pointsDeVie -= degats0; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
                 int randomIndex = Random.Range(0, sonBlesser.Length);
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorJoueur.Play("Blesser");
             }
-
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Botte"))
+            {
+                pointsDeVie -= degats1; // soustraire les dégâts infligés aux points de vie du personnage
+                float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
+                barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
+                print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
+                int randomIndex = Random.Range(0, sonBlesser.Length);
+                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorJoueur.Play("Blesser");
+            }
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Kick"))
+            {
+                pointsDeVie -= degats2; // soustraire les dégâts infligés aux points de vie du personnage
+                float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
+                barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
+                print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
+                int randomIndex = Random.Range(0, sonBlesser.Length);
+                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorJoueur.Play("Blesser");
+            }
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("KickHaut"))
+            {
+                pointsDeVie -= degats3; // soustraire les dégâts infligés aux points de vie du personnage
+                float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
+                barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
+                print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
+                int randomIndex = Random.Range(0, sonBlesser.Length);
+                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorJoueur.Play("Blesser");
+            }
         }
     }
 
     /*/////////////////////////////////ZONE FONCTIONS//////////////////////////////*/
-    IEnumerator PlayAttaqueAfterDelay()
+    void PlayAttaqueAfterDelay()
     {
-        // Attente du délai
-        yield return new WaitForSeconds(delayTimeAttaque);
-
         // Lancement de l'animation
-        animator.SetTrigger("Attaque");
+        InvokeRepeating("CoupAleatoire", 0, 3);
+        animator.SetTrigger("Attaque_"+numeroA);
         // Rendre la variable attaque true
         aiAttaque = true;
         // Jouer les sons
@@ -128,25 +161,9 @@ public class GestionEnnemi : MonoBehaviour
         // Rendre la variable attaque false
         aiAttaque = false;
     }
-    /*IEnumerator PlaKickAfterDelay()
+    void CoupAleatoire()
     {
-        // Attente du délai
-        yield return new WaitForSeconds(delayTimeKick);
-
-        // Lancement de l'animation
-        int randomNumber = Random.Range(1, 4);
-        animator.SetTrigger("Kick");
-
-        // Rendre la variable attaque true
-        aiAttaque = true;
-        // Jouer les sons
-        audioSource.clip = sonSwoosh;
-        audioSource.Play();
-        // Rendre la variable attaque false
-        aiAttaque = false;
-    }*/
-    /*void DonnerCoup()
-    {
-    degats = 10f;
-    }*/
+        numeroA = Random.Range(1, 5);
+        Debug.Log("attaque choisis" + numeroA);
+    }
 }

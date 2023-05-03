@@ -7139,6 +7139,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 09a180207b8236a4d927aef796301664, type: 3}
   sonMort: {fileID: 8300000, guid: 87d5e5e9bf47acf4a9bc4336e2da39db, type: 3}
   animatorPerso: {fileID: 1713302687}
+  animatorEnnemi: {fileID: 1734490540}
   rigidbodyPerso: {fileID: 1713302688}
   vitesseDeplacement: 100
   pointsDeVie: 100
@@ -7373,16 +7374,21 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 09a180207b8236a4d927aef796301664, type: 3}
   sonMort: {fileID: 8300000, guid: 87d5e5e9bf47acf4a9bc4336e2da39db, type: 3}
   pointsDeVie: 100
-  degats: 2
+  degats0: 5
+  degats2: 6
+  degats1: 7
+  degats3: 10
   barreDeVie: {fileID: 504600114}
   aiAttaque: 0
-  delayTimeAttaque: 0.4
+  delayTimeAttaque: 1
+  animatorJoueur: {fileID: 1713302687}
   rigidbodyPerso: {fileID: 1734490539}
   cible: {fileID: 1713302690}
   vitesseDeplacement: 1e-35
   distanceArret: 2
   finPartie: 0
   MenuDefaite: {fileID: 1319522191}
+  numeroA: 3
 --- !u!136 &1734490542
 CapsuleCollider:
   m_ObjectHideFlags: 0

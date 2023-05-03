@@ -15,6 +15,7 @@ public class GestionPerso : MonoBehaviour
 
     [Header("Zone animation personnage")]
     public Animator animatorPerso;
+    public Animator animatorEnnemi;
     //public GameObject Baton;
 
     [Header("Vitesse et rigidbody personnage")]
@@ -67,12 +68,12 @@ public class GestionPerso : MonoBehaviour
                 audioSource.Play();
             }
 
-            if (Input.GetKeyDown(KeyCode.L))
+            /*if (Input.GetKeyDown(KeyCode.L))
             {
                 Invoke("Bloque", 0);
                 audioSource.clip = sonBloque;
                 audioSource.Play();
-            }
+            }*/
 
             vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
             //rigidbodyPerso.velocity = transform.forward * vDeplacement;
@@ -121,22 +122,10 @@ public class GestionPerso : MonoBehaviour
                 // animatorPerso.SetTrigger("Attaque");
             }
         }
-        if (finPartie == true)
-        {
-           Time.timeScale = 0;
-        }
-        else
-        {
-           Time.timeScale = 1;
-        }
-
         if (pointsDeVie <= 0)
         {
-            finPartie = true;
-            MenuVictoire.SetActive(true);
-            partieGagner = true;
-            audioSource.clip = sonMort;
-            audioSource.Play();
+            animatorEnnemi.SetTrigger("Mort");
+            Invoke("FinPartie", 4);
         }
     }
 
@@ -165,6 +154,7 @@ public class GestionPerso : MonoBehaviour
                 /*sons*/
                 int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorEnnemi.Play("Blesser");
             }
             if (Input.GetKey(KeyCode.K))
             {
@@ -176,6 +166,7 @@ public class GestionPerso : MonoBehaviour
                 /*sons*/
                 int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorEnnemi.Play("Blesser");
             }
         }
     }
@@ -190,9 +181,17 @@ public class GestionPerso : MonoBehaviour
         animatorPerso.Play("Botte");
     }
 
-    void Bloque()
+    /*void Bloque()
     {
         animatorPerso.Play("Bloque");
+    }*/
+    void FinPartie()
+    {
+        finPartie = true;
+        MenuVictoire.SetActive(true);
+        partieGagner = true;
+        audioSource.clip = sonMort;
+        audioSource.Play();
     }
 }
 
