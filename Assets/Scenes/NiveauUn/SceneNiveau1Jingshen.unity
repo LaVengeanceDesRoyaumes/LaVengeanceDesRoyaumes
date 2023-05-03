@@ -7144,7 +7144,7 @@ MonoBehaviour:
   vitesseDeplacement: 100
   pointsDeVie: 100
   degats: 4
-  degatsBotte: 6
+  degatsBotte: 5
   barreDeVie: {fileID: 248439154}
   finPartie: 0
   MenuVictoire: {fileID: 88109931}
