@@ -12,6 +12,10 @@ public class Audio : MonoBehaviour
 
     private bool estMute = false;
 
+    [Header("Musiques de fonds pour niveau finale")]
+    public AudioClip audioNvxFinale;
+
+
 
     private void Awake()
     {
