@@ -7,6 +7,17 @@ public class BtnMapJingshen : MonoBehaviour
 {
 
     public GameObject MenuJouer;
+    public GameObject boutonFrontiere;
+
+    void Start(){
+        //boutonFrontiere = GetComponent<Button>().onClick.Invoke(ChargementJeuNiveau2);;
+    }
+
+    void Update(){
+        if (GestionPartie.CadenasMapJin[0].activeSelf == false){
+            
+        }
+    }
 
     // Menu Jouer
     public void OuvrirMenuJouer()

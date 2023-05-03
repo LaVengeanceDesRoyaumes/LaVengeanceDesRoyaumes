@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1507,7 +1507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &393658150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2591,6 +2591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuJouer: {fileID: 393658149}
+  boutonFrontiere: {fileID: 0}
 --- !u!1 &784097904
 GameObject:
   m_ObjectHideFlags: 0
@@ -2619,8 +2620,8 @@ RectTransform:
   m_LocalScale: {x: 0.085881144, y: 1.4470599, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1883717926}
   - {fileID: 1368522715}
+  - {fileID: 1883717926}
   - {fileID: 1825569445}
   - {fileID: 1663541334}
   m_Father: {fileID: 1661264027}
@@ -3203,6 +3204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuJouer: {fileID: 393658149}
+  boutonFrontiere: {fileID: 0}
 --- !u!114 &956821751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3655,6 +3657,7 @@ GameObject:
   - component: {fileID: 1161759631}
   - component: {fileID: 1161759630}
   - component: {fileID: 1161759629}
+  - component: {fileID: 1161759633}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3761,6 +3764,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1161759633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161759628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d601a8f3799c79e42aa9bbb9855cf982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VieCoeurs:
+  - {fileID: 1368522714}
+  - {fileID: 1883717925}
+  - {fileID: 1825569444}
 --- !u!1 &1179195701
 GameObject:
   m_ObjectHideFlags: 0
@@ -4102,6 +4121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuJouer: {fileID: 393658149}
+  boutonFrontiere: {fileID: 0}
 --- !u!114 &1316776531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4208,7 +4228,7 @@ GameObject:
   - component: {fileID: 1368522717}
   - component: {fileID: 1368522716}
   m_Layer: 5
-  m_Name: coeur (1)
+  m_Name: coeur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4223,15 +4243,15 @@ RectTransform:
   m_GameObject: {fileID: 1368522714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.39897, y: 0.39897, z: 0.39897}
+  m_LocalScale: {x: 0.39896998, y: 0.39897007, z: 0.39897}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 784097905}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34, y: 0}
+  m_AnchoredPosition: {x: -33.999924, y: 0}
   m_SizeDelta: {x: 85, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1368522716
@@ -4420,6 +4440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuJouer: {fileID: 393658149}
+  boutonFrontiere: {fileID: 0}
 --- !u!1 &1423874386
 GameObject:
   m_ObjectHideFlags: 0
@@ -6060,7 +6081,7 @@ GameObject:
   - component: {fileID: 1825569447}
   - component: {fileID: 1825569446}
   m_Layer: 5
-  m_Name: coeur (2)
+  m_Name: coeur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6277,7 +6298,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 784097905}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
