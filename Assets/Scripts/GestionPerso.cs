@@ -31,7 +31,7 @@ public class GestionPerso : MonoBehaviour
     [Header("Zone gestion de partie")]
     public bool finPartie = false;
     public GameObject MenuVictoire;
-    public static bool partieGagner;
+    public static bool partieGagnee;
 
     private void Awake()
     {
@@ -134,7 +134,7 @@ public class GestionPerso : MonoBehaviour
         {
             finPartie = true;
             MenuVictoire.SetActive(true);
-            partieGagner = true;
+            partieGagnee = true;
             audioSource.clip = sonMort;
             audioSource.Play();
         }
