@@ -1507,7 +1507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &393658150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2591,6 +2591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuJouer: {fileID: 393658149}
+  boutonFrontiere: {fileID: 0}
 --- !u!1 &784097904
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,6 +3204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuJouer: {fileID: 393658149}
+  boutonFrontiere: {fileID: 0}
 --- !u!114 &956821751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3778,15 +3780,6 @@ MonoBehaviour:
   - {fileID: 1368522714}
   - {fileID: 1883717925}
   - {fileID: 1825569444}
-  ConqMap:
-  - {fileID: 1566107321}
-  - {fileID: 749295549}
-  - {fileID: 499560389}
-  - {fileID: 227042787}
-  CadenasMap:
-  - {fileID: 1866841999}
-  - {fileID: 817743115}
-  - {fileID: 1692566276}
 --- !u!1 &1179195701
 GameObject:
   m_ObjectHideFlags: 0
@@ -4128,6 +4121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuJouer: {fileID: 393658149}
+  boutonFrontiere: {fileID: 0}
 --- !u!114 &1316776531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4446,6 +4440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuJouer: {fileID: 393658149}
+  boutonFrontiere: {fileID: 0}
 --- !u!1 &1423874386
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,9 +8,9 @@ public class GestionPartie : MonoBehaviour
     // array de game objects pour detection du nombre de coeurs
     public GameObject[] VieCoeurs;
     // array de game objects pour detection de la conquete des territoires
-    public GameObject[] ConqMap;
+    public static GameObject[] ConqMapJin;
     // array de game objects pour detection des territoires déverrouillés
-    public GameObject[] CadenasMap;
+    public static GameObject[] CadenasMapJin;
 
 
     // Start is called before the first frame update
@@ -44,8 +44,8 @@ public class GestionPartie : MonoBehaviour
         
 
         if (GestionPerso.partieGagnee == true) {
-            ConqMap[0].SetActive(true);
-            CadenasMap[0].SetActive(false);
+            ConqMapJin[0].SetActive(true);
+            CadenasMapJin[0].SetActive(false);
         }
     }
 
