@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class GestionPartie : MonoBehaviour
 {
+
+    // array de game objects pour detection du nombre de coeurs
     public GameObject[] VieCoeurs;
-    public GameObject[] ConqMap;
-    public GameObject[] CadenasMap;
+    // array de game objects pour detection de la conquete des territoires
+    public static GameObject[] ConqMapJin;
+    // array de game objects pour detection des territoires déverrouillés
+    public static GameObject[] CadenasMapJin;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,14 +22,16 @@ public class GestionPartie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (BtnFinPartie.NbFinPartie == 1) {
+        // trouver une façon plus efficace d'écrire ça?
+        // un for loop ou la variable i represente la position dans le array vieCoeurs
+        if (BtnFinPartie.NbFinPerdu == 1) {
             VieCoeurs[2].SetActive(false);
         }
-        if (BtnFinPartie.NbFinPartie == 2) {
+        if (BtnFinPartie.NbFinPerdu == 2) {
             VieCoeurs[1].SetActive(false);
             VieCoeurs[2].SetActive(false);
         }
-        if (BtnFinPartie.NbFinPartie == 3) {
+        if (BtnFinPartie.NbFinPerdu == 3) {
             VieCoeurs[0].SetActive(false);
             VieCoeurs[1].SetActive(false);
             VieCoeurs[2].SetActive(false);
@@ -37,8 +44,8 @@ public class GestionPartie : MonoBehaviour
         
 
         if (GestionPerso.partieGagnee == true) {
-            ConqMap[0].SetActive(true);
-            CadenasMap[0].SetActive(false);
+            ConqMapJin[0].SetActive(true);
+            CadenasMapJin[0].SetActive(false);
         }
     }
 
