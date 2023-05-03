@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17225169, g: 0.4646652, b: 0.49285766, a: 1}
+  m_IndirectSpecularColor: {r: 0.17225169, g: 0.4646652, b: 0.49285764, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -4721,8 +4721,6 @@ MonoBehaviour:
   fenetreTuto: {fileID: 1099452885}
   personnage1: {fileID: 1713302685}
   personnage2: {fileID: 1734490538}
-  scriptp1: {fileID: 1713302686}
-  scriptp2: {fileID: 1734490541}
 --- !u!1 &1194957954
 GameObject:
   m_ObjectHideFlags: 0
@@ -7136,35 +7134,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 014c7d2ce273cd14185ccfebbb25605a, type: 3}
   m_PrefabInstance: {fileID: 977941232}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1713302686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713302685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47097ed84a2ecde4d9a67c84ad1cfcae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sonSwoosh: {fileID: 8300000, guid: 31066f1d3b686e940b0105b00d8759bd, type: 3}
-  sonAttaque: {fileID: 8300000, guid: 108caaa65ab028d4b859d927be4cfc0b, type: 3}
-  sonBloque: {fileID: 8300000, guid: df00436664bb2534b896dd32b52802b0, type: 3}
-  sonBlesser:
-  - {fileID: 8300000, guid: 23577913d25f7914eb683c5bdef18036, type: 3}
-  - {fileID: 8300000, guid: fcb0e902348322a4abcd9f2d7d263a56, type: 3}
-  - {fileID: 8300000, guid: 09a180207b8236a4d927aef796301664, type: 3}
-  sonMort: {fileID: 8300000, guid: 87d5e5e9bf47acf4a9bc4336e2da39db, type: 3}
-  animatorPerso: {fileID: 1713302687}
-  rigidbodyPerso: {fileID: 1713302688}
-  vitesseDeplacement: 100
-  pointsDeVie: 100
-  degats: 4
-  degatsBotte: 5
-  barreDeVie: {fileID: 248439154}
-  finPartie: 0
-  MenuVictoire: {fileID: 88109931}
 --- !u!95 &1713302687
 Animator:
   serializedVersion: 5
@@ -7330,6 +7299,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1713302695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713302685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f81d66be24287e44ba5f2dd5126a6e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonSwoosh: {fileID: 8300000, guid: 31066f1d3b686e940b0105b00d8759bd, type: 3}
+  sonAttaque: {fileID: 8300000, guid: 95c5c6e014241de47b4512cf9ae54b01, type: 3}
+  sonBlesser:
+  - {fileID: 8300000, guid: 23577913d25f7914eb683c5bdef18036, type: 3}
+  - {fileID: 8300000, guid: fcb0e902348322a4abcd9f2d7d263a56, type: 3}
+  - {fileID: 8300000, guid: 09a180207b8236a4d927aef796301664, type: 3}
+  sonMort: {fileID: 8300000, guid: 87d5e5e9bf47acf4a9bc4336e2da39db, type: 3}
+  animatorPerso: {fileID: 0}
+  rigidbodyPerso: {fileID: 0}
+  vitesseDeplacement: 100
+  pointsDeVie: 100
+  degats: 3
+  degatsBotte: 4
+  barreDeVie: {fileID: 0}
+  finPartie: 0
+  MenuVictoire: {fileID: 0}
 --- !u!1 &1734490538 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f62b3051e7ddaf7419ac64d49c173627, type: 3}

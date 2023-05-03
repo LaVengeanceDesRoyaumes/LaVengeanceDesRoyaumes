@@ -9,7 +9,6 @@ public class GestionPerso : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip sonSwoosh;
     public AudioClip sonAttaque;
-    public AudioClip sonBloque;
     public AudioClip[] sonBlesser;
     public AudioClip sonMort;
 
@@ -69,9 +68,7 @@ public class GestionPerso : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.L))
             {
-                Invoke("Bloque", 0);
-                audioSource.clip = sonBloque;
-                audioSource.Play();
+              
             }
 
             vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
@@ -190,9 +187,6 @@ public class GestionPerso : MonoBehaviour
         animatorPerso.Play("Botte");
     }
 
-    void Bloque()
-    {
-        animatorPerso.Play("Bloque");
-    }
+  
 }
 
