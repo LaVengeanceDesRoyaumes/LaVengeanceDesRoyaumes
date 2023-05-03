@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class GestionPartie : MonoBehaviour
 {
+
+    // array de game objects pour detection du nombre de coeurs
     public GameObject[] VieCoeurs;
+    // array de game objects pour detection de la conquete des territoires
     public GameObject[] ConqMap;
+    // array de game objects pour detection des territoires déverrouillés
     public GameObject[] CadenasMap;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,14 +22,16 @@ public class GestionPartie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (BtnFinPartie.NbFinPartie == 1) {
+        // trouver une façon plus efficace d'écrire ça?
+        // un for loop ou la variable i represente la position dans le array vieCoeurs
+        if (BtnFinPartie.NbFinPerdu == 1) {
             VieCoeurs[2].SetActive(false);
         }
-        if (BtnFinPartie.NbFinPartie == 2) {
+        if (BtnFinPartie.NbFinPerdu == 2) {
             VieCoeurs[1].SetActive(false);
             VieCoeurs[2].SetActive(false);
         }
-        if (BtnFinPartie.NbFinPartie == 3) {
+        if (BtnFinPartie.NbFinPerdu == 3) {
             VieCoeurs[0].SetActive(false);
             VieCoeurs[1].SetActive(false);
             VieCoeurs[2].SetActive(false);

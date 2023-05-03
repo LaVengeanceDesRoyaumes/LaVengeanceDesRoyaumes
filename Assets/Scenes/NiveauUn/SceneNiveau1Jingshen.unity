@@ -7147,6 +7147,7 @@ MonoBehaviour:
   barreDeVie: {fileID: 248439154}
   finPartie: 0
   MenuVictoire: {fileID: 88109931}
+  MenuTuto: {fileID: 1099452885}
 --- !u!95 &1713302687
 Animator:
   serializedVersion: 5

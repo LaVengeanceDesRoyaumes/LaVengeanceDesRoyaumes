@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -32,6 +33,7 @@ public class GestionPerso : MonoBehaviour
     public bool finPartie = false;
     public GameObject MenuVictoire;
     public static bool partieGagnee;
+    public GameObject MenuTuto;
 
     private void Awake()
     {
@@ -137,6 +139,10 @@ public class GestionPerso : MonoBehaviour
             partieGagnee = true;
             audioSource.clip = sonMort;
             audioSource.Play();
+        }
+
+        if (BtnFinPartie.NbFinPartie > 0){
+            MenuTuto.SetActive(false);
         }
     }
 
