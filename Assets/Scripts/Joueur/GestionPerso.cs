@@ -118,14 +118,6 @@ public class GestionPerso : MonoBehaviour
                 // animatorPerso.SetTrigger("Attaque");
             }
         }
-        if (finPartie == true)
-        {
-           Time.timeScale = 0;
-        }
-        else
-        {
-           Time.timeScale = 1;
-        }
 
         if (pointsDeVie <= 0)
         {
