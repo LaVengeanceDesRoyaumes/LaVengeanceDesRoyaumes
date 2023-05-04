@@ -7576,13 +7576,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 09a180207b8236a4d927aef796301664, type: 3}
   sonMort: {fileID: 8300000, guid: 87d5e5e9bf47acf4a9bc4336e2da39db, type: 3}
   pointsDeVie: 100
-  degats0: 3
-  degats2: 4
-  degats1: 5
-  degats3: 7
+  degats0: 5
+  degats2: 6
+  degats1: 7
+  degats3: 10
   barreDeVie: {fileID: 504600114}
   aiAttaque: 0
-  delayTimeAttaque: 1
+  delayTimeAttaque: 0
   animatorJoueur: {fileID: 1713302687}
   rigidbodyPerso: {fileID: 1734490539}
   cible: {fileID: 1713302690}

@@ -144,8 +144,7 @@ public class GestionEnnemi : MonoBehaviour
     void PlayAttaqueAfterDelay()
     {
         // Lancement de l'animation
-        //InvokeRepeating("CoupAleatoire", 0, 1);
-        numeroA = Random.Range(1, 5);
+        InvokeRepeating("CoupAleatoire", 0, 1);
         animator.SetTrigger("Attaque_"+numeroA);
         // Rendre la variable attaque true
         aiAttaque = true;
@@ -155,11 +154,11 @@ public class GestionEnnemi : MonoBehaviour
         // Rendre la variable attaque false
         aiAttaque = false;
     }
-    /*void CoupAleatoire()
+    void CoupAleatoire()
     {
-        
-        //Debug.Log("attaque choisis" + numeroA);
-    }*/
+        numeroA = Random.Range(1, 5);
+        Debug.Log("attaque choisis" + numeroA);
+    }
     void FinPartie()
     {
         finPartie = true;
