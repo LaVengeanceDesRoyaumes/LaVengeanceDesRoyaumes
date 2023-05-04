@@ -50,12 +50,15 @@ public class GestionEnnemi : MonoBehaviour
         rigidbodyPerso = GetComponent<Rigidbody>();
         finPartie = false;
         // Lancement de la coroutine pour jouer l'animation après un certain temps
-        InvokeRepeating("PlayAttaqueAfterDelay", 0, delayTimeAttaque);
+        if (finPartie == false)
+        {
+            InvokeRepeating("PlayAttaqueAfterDelay", 0, delayTimeAttaque);
+        }
     }
 
     private void Update()
     {
-        if (!finPartie)
+        if (finPartie == false)
         {
             // Vérifie si la cible est valide
             if (cible == null)
@@ -82,67 +85,57 @@ public class GestionEnnemi : MonoBehaviour
 
         if (pointsDeVie <= 0)
         {
-            finPartie = true;
-            MenuDefaite.SetActive(true);
-            partiePerdue = true;
+            animatorJoueur.SetTrigger("Mort");
             audioSource.clip = sonMort;
             audioSource.Play();
+            Invoke("FinPartie", 4);
         }
     }
 
     /*/////////////////////////////////ZONE COLLISIONS//////////////////////////////*/
-    /*void OnTriggerEnter(Collider other)
-    {
-        //si je rentre en collision avec l'arme de mon ennemi...
-        if (other.gameObject.tag == "ArmeMonPerso")
-        {
-            //Jouer aléatoirement le son de mon personnage lorsqu'il est blessé   
-
-        }
-    }*/
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("joueur"))
         {
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attaque"))
             {
+                int randomIndex = Random.Range(0, sonBlesser.Length);
+                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorJoueur.Play("Blesser");
                 pointsDeVie -= degats0; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
-                int randomIndex = Random.Range(0, sonBlesser.Length);
-                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
-                animatorJoueur.Play("Blesser");
             }
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Botte"))
             {
+                int randomIndex = Random.Range(0, sonBlesser.Length);
+                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorJoueur.Play("Blesser");
                 pointsDeVie -= degats1; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
-                int randomIndex = Random.Range(0, sonBlesser.Length);
-                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
-                animatorJoueur.Play("Blesser");
             }
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Kick"))
             {
+                int randomIndex = Random.Range(0, sonBlesser.Length);
+                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorJoueur.Play("Blesser");
                 pointsDeVie -= degats2; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
-                int randomIndex = Random.Range(0, sonBlesser.Length);
-                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
-                animatorJoueur.Play("Blesser");
             }
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("KickHaut"))
             {
+                int randomIndex = Random.Range(0, sonBlesser.Length);
+                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorJoueur.Play("Blesser");
                 pointsDeVie -= degats3; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
-                int randomIndex = Random.Range(0, sonBlesser.Length);
-                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
-                animatorJoueur.Play("Blesser");
             }
         }
     }
@@ -151,7 +144,8 @@ public class GestionEnnemi : MonoBehaviour
     void PlayAttaqueAfterDelay()
     {
         // Lancement de l'animation
-        InvokeRepeating("CoupAleatoire", 0, 3);
+        //InvokeRepeating("CoupAleatoire", 0, 1);
+        numeroA = Random.Range(1, 5);
         animator.SetTrigger("Attaque_"+numeroA);
         // Rendre la variable attaque true
         aiAttaque = true;
@@ -161,9 +155,15 @@ public class GestionEnnemi : MonoBehaviour
         // Rendre la variable attaque false
         aiAttaque = false;
     }
-    void CoupAleatoire()
+    /*void CoupAleatoire()
     {
-        numeroA = Random.Range(1, 5);
-        Debug.Log("attaque choisis" + numeroA);
+        
+        //Debug.Log("attaque choisis" + numeroA);
+    }*/
+    void FinPartie()
+    {
+        finPartie = true;
+        MenuDefaite.SetActive(true);
+        partiePerdue = true;
     }
 }
