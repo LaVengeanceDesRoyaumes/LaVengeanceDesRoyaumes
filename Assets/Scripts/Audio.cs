@@ -12,16 +12,6 @@ public class Audio : MonoBehaviour
 
     private bool estMute = false;
 
-    [Header("Musiques de fonds pour Jingshen")]
-    public AudioClip audioJinNvxUn;
-    public AudioClip audioJinNvxDeux;
-    public AudioClip audioJinNvxTrois;
-
-    [Header("Musiques de fonds pour Kratos")]
-    public AudioClip audioKraNvxUn;
-    public AudioClip audioKraNvxDeux;
-    public AudioClip audioKraNvxTrois;
-
     [Header("Musiques de fonds pour niveau finale")]
     public AudioClip audioNvxFinale;
 
@@ -50,44 +40,6 @@ public class Audio : MonoBehaviour
         {
             estMute = !estMute;
             audioSource.mute = estMute;
-        }
-
-
-        // Arrête la musique de fond du menu démarage et autres interfaces qui vient avant les scènes de niveaux de chaque clan
-        if (SceneManager.GetActiveScene().name == "SceneNiveau1Jingshen")
-        {
-            audioSource.clip = audioJinNvxUn;
-            audioSource.Play();
-        }
-        else if (SceneManager.GetActiveScene().name == "SceneNiveau2Jingshen")
-        {
-            audioSource.clip = audioJinNvxDeux;
-            audioSource.Play();
-        }
-        else if (SceneManager.GetActiveScene().name == "SceneNiveau3Jingshen")
-        {
-            audioSource.clip = audioJinNvxTrois;
-            audioSource.Play();
-        }
-        else if (SceneManager.GetActiveScene().name == "SceneNiveau1Kratos")
-        {
-            audioSource.clip = audioKraNvxUn;
-            audioSource.Play();
-        }
-        else if (SceneManager.GetActiveScene().name == "SceneNiveau2Kratos")
-        {
-            audioSource.clip = audioKraNvxDeux;
-            audioSource.Play();
-        }
-        else if (SceneManager.GetActiveScene().name == "SceneNiveau3Kratos")
-        {
-            audioSource.clip = audioKraNvxTrois;
-            audioSource.Play();
-        }
-        else if (SceneManager.GetActiveScene().name == "SceneNiveauFinale")
-        {
-            audioSource.clip = audioNvxFinale;
-            audioSource.Play();
         }
 
 

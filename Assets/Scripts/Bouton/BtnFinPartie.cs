@@ -21,7 +21,7 @@ public class BtnFinPartie : MonoBehaviour
             SceneManager.LoadScene("SceneMapKratos");
         }
 
-        if (GestionEnnemi.partiePerdue == true || GestionPerso.partieGagnee == true) {
+        if (GestionEnnemi.partiePerdue == true /*|| GestionPerso.partieGagnee == true*/) {
             GestionCompteParties();
             if (GestionEnnemi.partiePerdue == true) {
             GestionComptePertes();
@@ -41,7 +41,7 @@ public class BtnFinPartie : MonoBehaviour
             SceneManager.LoadScene("SceneNiveau1Kratos");
         }
 
-        if (GestionEnnemi.partiePerdue == true || GestionPerso.partieGagnee == true) {
+        if (GestionEnnemi.partiePerdue == true /*|| GestionPerso.partieGagnee == true*/) {
             GestionCompteParties();
 
             if (GestionEnnemi.partiePerdue == true) {
