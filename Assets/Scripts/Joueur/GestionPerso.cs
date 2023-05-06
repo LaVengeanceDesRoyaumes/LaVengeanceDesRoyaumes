@@ -14,6 +14,7 @@ public class GestionPerso : MonoBehaviour
 
     [Header("Zone animation personnage")]
     public Animator animatorPerso;
+    public Animator animatorEnnemi;
     //public GameObject Baton;
 
     [Header("Vitesse et rigidbody personnage")]
@@ -118,20 +119,11 @@ public class GestionPerso : MonoBehaviour
                 // animatorPerso.SetTrigger("Attaque");
             }
         }
-        if (finPartie == true)
-        {
-           Time.timeScale = 0;
-        }
-        else
-        {
-           Time.timeScale = 1;
-        }
 
         if (pointsDeVie <= 0)
         {
-            finPartie = true;
-            MenuVictoire.SetActive(true);
-            partieGagnee = true;
+            animatorEnnemi.SetTrigger("Mort");
+            Invoke("FinPartie", 4);
             audioSource.clip = sonMort;
             audioSource.Play();
         }
@@ -139,15 +131,6 @@ public class GestionPerso : MonoBehaviour
 
 
     /*/////////////////////////////////ZONE COLLISION//////////////////////////////*/
-    /*void OnTriggerEnter(Collider other)
-    {
-        //si je rentre en collision avec l'arme de mon ennemi...
-        if (other.gameObject.tag == "ArmeEnnemi")
-        {
-
-
-        }
-    }*/
      void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("ennemi"))
@@ -162,6 +145,7 @@ public class GestionPerso : MonoBehaviour
                 /*sons*/
                 int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorEnnemi.Play("Blesser");
             }
             if (Input.GetKey(KeyCode.K))
             {
@@ -173,6 +157,7 @@ public class GestionPerso : MonoBehaviour
                 /*sons*/
                 int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorEnnemi.Play("Blesser");
             }
         }
     }
@@ -187,6 +172,11 @@ public class GestionPerso : MonoBehaviour
         animatorPerso.Play("Botte");
     }
 
-  
-}
+    void FinPartie()
+    {
+        finPartie = true;
+        MenuVictoire.SetActive(true);
+        partieGagnee = true;
+    }
 
+}
