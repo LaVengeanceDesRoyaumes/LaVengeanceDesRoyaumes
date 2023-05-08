@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17225169, g: 0.4646652, b: 0.49285764, a: 1}
+  m_IndirectSpecularColor: {r: 0.17225231, g: 0.46466595, b: 0.49285987, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -7511,9 +7511,9 @@ MonoBehaviour:
   vitesseDeplacement: 100
   hauteurSaut: 99
   pointsDeVie: 100
-  degats: 2
-  degatsFrappe: 3
-  degatsBotte: 5
+  degats: 1
+  degatsFrappe: 2
+  degatsBotte: 3
   barreDeVie: {fileID: 248439154}
   MenuVictoire: {fileID: 88109931}
 --- !u!1 &1734490538 stripped
