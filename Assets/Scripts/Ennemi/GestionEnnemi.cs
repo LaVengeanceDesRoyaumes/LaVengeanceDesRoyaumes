@@ -23,7 +23,7 @@ public class GestionEnnemi : MonoBehaviour
     public bool aiAttaque = false;
 
     [Header("Zone deplacement et animation")]
-    public int delayTimeAttaque = 1; // Délai avant de lancer l'animation d'attaque
+    public int delayTimeAttaque; // Délai avant de lancer l'animation d'attaque
     private Animator animator; // Référence à l'animator
     public Animator animatorJoueur; // Référence à l'animator du joueur
     public Rigidbody rigidbodyPerso; // Rigidbody de l'ennemi
@@ -41,11 +41,12 @@ public class GestionEnnemi : MonoBehaviour
     private void Awake()
     {
         // Récupèrer l'AudioSource du GameObject actuelle
-        audioSource = GetComponent<AudioSource>();
+
     }
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         rigidbodyPerso = GetComponent<Rigidbody>();
         finPartie = false;
@@ -85,9 +86,8 @@ public class GestionEnnemi : MonoBehaviour
 
         if (pointsDeVie <= 0)
         {
+            audioSource.PlayOneShot(sonMort);
             animatorJoueur.SetTrigger("Mort");
-            audioSource.clip = sonMort;
-            audioSource.Play();
             Invoke("FinPartie", 4);
         }
     }
@@ -149,8 +149,8 @@ public class GestionEnnemi : MonoBehaviour
         // Rendre la variable attaque true
         aiAttaque = true;
         // Jouer les sons
-        audioSource.clip = sonSwoosh;
-        audioSource.Play();
+        /*audioSource.clip = sonSwoosh;
+        audioSource.Play();*/
         // Rendre la variable attaque false
         aiAttaque = false;
     }
