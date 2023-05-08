@@ -7355,7 +7355,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 124
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!4 &1713302690 stripped
 Transform:
@@ -7509,11 +7509,12 @@ MonoBehaviour:
   animatorEnnemi: {fileID: 1734490540}
   rigidbodyPerso: {fileID: 1713302688}
   vitesseDeplacement: 100
+  hauteurSaut: 99
   pointsDeVie: 100
-  degats: 3
-  degatsBotte: 4
+  degats: 2
+  degatsFrappe: 3
+  degatsBotte: 5
   barreDeVie: {fileID: 248439154}
-  finPartie: 0
   MenuVictoire: {fileID: 88109931}
 --- !u!1 &1734490538 stripped
 GameObject:
@@ -7534,7 +7535,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 124
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!95 &1734490540
 Animator:
@@ -7582,13 +7583,12 @@ MonoBehaviour:
   degats3: 10
   barreDeVie: {fileID: 504600114}
   aiAttaque: 0
-  delayTimeAttaque: 0
+  tempsAttaque: 5
   animatorJoueur: {fileID: 1713302687}
   rigidbodyPerso: {fileID: 1734490539}
   cible: {fileID: 1713302690}
   vitesseDeplacement: 1e-35
   distanceArret: 2
-  finPartie: 0
   MenuDefaite: {fileID: 1319522191}
   numeroA: 3
 --- !u!136 &1734490542

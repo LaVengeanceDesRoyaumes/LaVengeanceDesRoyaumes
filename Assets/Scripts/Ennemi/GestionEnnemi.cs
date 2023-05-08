@@ -23,7 +23,7 @@ public class GestionEnnemi : MonoBehaviour
     public bool aiAttaque = false;
 
     [Header("Zone deplacement et animation")]
-    public int delayTimeAttaque; // Délai avant de lancer l'animation d'attaque
+    public float tempsAttaque; // Délai avant de lancer l'animation d'attaque
     private Animator animator; // Référence à l'animator
     public Animator animatorJoueur; // Référence à l'animator du joueur
     public Rigidbody rigidbodyPerso; // Rigidbody de l'ennemi
@@ -32,34 +32,24 @@ public class GestionEnnemi : MonoBehaviour
     public float distanceArret; // La distance à laquelle l'ennemi s'arrête
 
     [Header("Zone gestion de partie")]
-    public bool finPartie = false;
     public GameObject MenuDefaite;
     public static bool partiePerdue = false;
 
     public int numeroA=3;
 
-    private void Awake()
-    {
-        // Récupèrer l'AudioSource du GameObject actuelle
-
-    }
-
     void Start()
     {
+        GestionPerso.finPartie = false;
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         rigidbodyPerso = GetComponent<Rigidbody>();
-        finPartie = false;
         // Lancement de la coroutine pour jouer l'animation après un certain temps
-        if (finPartie == false)
-        {
-            InvokeRepeating("PlayAttaqueAfterDelay", 0, delayTimeAttaque);
-        }
+        InvokeRepeating("PlayAttaqueAfterDelay", tempsAttaque, tempsAttaque);
     }
 
     private void Update()
     {
-        if (finPartie == false)
+        if (!GestionPerso.finPartie)
         {
             // Vérifie si la cible est valide
             if (cible == null)
@@ -81,7 +71,6 @@ public class GestionEnnemi : MonoBehaviour
             {
                 animator.SetBool("MouvementAvance", false);
             }
-            //InvokeRepeating("CoupAleatoire", delayTimeAttaque, delayTimeAttaque);
         }
 
         if (pointsDeVie <= 0)
@@ -89,6 +78,7 @@ public class GestionEnnemi : MonoBehaviour
             animatorJoueur.SetTrigger("Mort");
             audioSource.clip = sonMort;
             audioSource.Play();
+            GestionPerso.finPartie = true;
             Invoke("FinPartie", 4);
         }
     }
@@ -108,7 +98,7 @@ public class GestionEnnemi : MonoBehaviour
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
             }
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Botte"))
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Frappe"))
             {
                 int randomIndex = Random.Range(0, sonBlesser.Length);
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
@@ -128,7 +118,7 @@ public class GestionEnnemi : MonoBehaviour
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
             }
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("KickHaut"))
+            /*if (animator.GetCurrentAnimatorStateInfo(0).IsName("KickHaut"))
             {
                 int randomIndex = Random.Range(0, sonBlesser.Length);
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
@@ -137,32 +127,32 @@ public class GestionEnnemi : MonoBehaviour
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
                 print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
-            }
+            }*/
         }
     }
 
     /*/////////////////////////////////ZONE FONCTIONS//////////////////////////////*/
     void PlayAttaqueAfterDelay()
     {
-        // Lancement de l'animation
-        InvokeRepeating("CoupAleatoire", 0, 1);
-        animator.SetTrigger("Attaque_"+numeroA);
-        // Rendre la variable attaque true
-        aiAttaque = true;
-        // Jouer les sons
-        /*audioSource.clip = sonSwoosh;
-        audioSource.Play();*/
-        // Rendre la variable attaque false
-        aiAttaque = false;
+        if (!GestionPerso.finPartie)
+        {
+            // Lancement de l'animation
+            numeroA = Random.Range(1, 4);
+            Debug.Log("attaque choisis" + numeroA);
+            animator.SetTrigger("Attaque_" + numeroA);
+            // Rendre la variable attaque true
+            aiAttaque = true;
+            // Rendre la variable attaque false
+            aiAttaque = false;
+        }
     }
-    void CoupAleatoire()
+    /*void CoupAleatoire()
     {
         numeroA = Random.Range(1, 5);
         Debug.Log("attaque choisis" + numeroA);
-    }
+    }*/
     void FinPartie()
     {
-        finPartie = true;
         MenuDefaite.SetActive(true);
         partiePerdue = true;
     }
