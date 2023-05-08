@@ -14,9 +14,9 @@ public class BtnMapJingshen : MonoBehaviour
     }
 
     void Update(){
-        if (GestionPartie.CadenasMapJin[0].activeSelf == false){
+     /*   if (GestionPartie.CadenasMapJin[0].activeSelf == false){
             
-        }
+        }*/
     }
 
     // Menu Jouer
