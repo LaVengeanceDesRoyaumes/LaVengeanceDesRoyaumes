@@ -75,9 +75,8 @@ public class GestionEnnemi : MonoBehaviour
 
         if (pointsDeVie <= 0)
         {
+            audioSource.PlayOneShot(sonMort);
             animatorJoueur.SetTrigger("Mort");
-            audioSource.clip = sonMort;
-            audioSource.Play();
             GestionPerso.finPartie = true;
             Invoke("FinPartie", 4);
         }

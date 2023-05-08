@@ -24,6 +24,9 @@ public class Audio : MonoBehaviour
 
         // Fonction pour ne pas détruire l'objet (la musique de fond) lorsque je change de scène
         DontDestroyOnLoad(gameObject);
+
+        // S'abonner à l'événement de changement de scène
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void Start()
@@ -41,7 +44,19 @@ public class Audio : MonoBehaviour
             estMute = !estMute;
             audioSource.mute = estMute;
         }
+       
 
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Si la scène chargée correspond à "combat" ou "carte"
+        if (scene.name == "SceneNiveau1Jingshen" || scene.name == "SceneNiveau1Kratos")
+        {
+            // Arrêter la musique
+            audioSource.Stop();
 
+            // Enlever le GameObject de la scène courante pour éviter qu'il ne soit détruit lors du changement de scène
+           // Destroy(gameObject);
+        }
     }
 }

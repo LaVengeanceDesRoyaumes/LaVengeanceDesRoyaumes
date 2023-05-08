@@ -2591,7 +2591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuJouer: {fileID: 393658149}
-  boutonFrontiere: {fileID: 0}
+  boutonFrontiere: {fileID: 927500734}
 --- !u!1 &784097904
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,6 +3780,15 @@ MonoBehaviour:
   - {fileID: 1368522714}
   - {fileID: 1883717925}
   - {fileID: 1825569444}
+  ConqMapJin:
+  - {fileID: 1566107321}
+  - {fileID: 749295549}
+  - {fileID: 499560389}
+  - {fileID: 227042787}
+  CadenasMapJin:
+  - {fileID: 1866841999}
+  - {fileID: 817743115}
+  - {fileID: 1692566276}
 --- !u!1 &1179195701
 GameObject:
   m_ObjectHideFlags: 0
