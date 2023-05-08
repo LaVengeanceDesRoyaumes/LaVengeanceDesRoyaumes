@@ -18,6 +18,7 @@ public class BtnPause : MonoBehaviour
     // retour a la map
     public void RetourMap()
     {
+        Time.timeScale = 1f;
         if (BtnChangementScene.royaumeChoisi == "jingshen") 
         {
             SceneManager.LoadScene("SceneMapJingshen");

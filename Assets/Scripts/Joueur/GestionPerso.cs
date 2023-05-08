@@ -21,15 +21,17 @@ public class GestionPerso : MonoBehaviour
     public Rigidbody rigidbodyPerso;
     public float vitesseDeplacement = 100f;
     private float vDeplacement;
+    public float hauteurSaut;
 
     [Header("Zone detection des coups")]
     public float pointsDeVie = 100f; // points de vie du personnage
     public float degats = 3f; // les dégâts infligés aux ennemis
-    public float degatsBotte = 4f; // les dégâts infligés aux ennemis
+    public float degatsFrappe = 4f; // les dégâts avec le kick 2
+    public float degatsBotte = 5f; // les dégâts infligés aux ennemis avec kick
     public Image barreDeVie; // la barre de vie de l'ennemi
 
     [Header("Zone gestion de partie")]
-    public bool finPartie = false;
+    public static bool finPartie = false;
     public GameObject MenuVictoire;
     public static bool partieGagnee;
 
@@ -57,7 +59,6 @@ public class GestionPerso : MonoBehaviour
                 Invoke("Attaque", 0);
                 audioSource.clip = sonSwoosh;
                 audioSource.Play();
-
             }
 
             if (Input.GetKeyDown(KeyCode.K))
@@ -69,8 +70,16 @@ public class GestionPerso : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.L))
             {
-              
+                Invoke("Frappe", 0);
+                audioSource.clip = sonAttaque;
+                audioSource.Play();
             }
+            /*if (Input.GetKeyDown(KeyCode.W))
+            {
+                Invoke("Saute", 0);
+                //rigidbodyPerso.AddForce(Vector3.up * hauteurSaut);
+                rigidbodyPerso.AddForce(Vector3.up * hauteurSaut, ForceMode.Impulse);
+            }*/
 
             vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
             //rigidbodyPerso.velocity = transform.forward * vDeplacement;
@@ -113,11 +122,6 @@ public class GestionPerso : MonoBehaviour
             {
                 animatorPerso.SetBool("MouvementRecule", false);
             }
-
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                // animatorPerso.SetTrigger("Attaque");
-            }
         }
 
         if (pointsDeVie <= 0)
@@ -126,6 +130,7 @@ public class GestionPerso : MonoBehaviour
             Invoke("FinPartie", 4);
             audioSource.clip = sonMort;
             audioSource.Play();
+            finPartie = true;
         }
     }
 
@@ -159,6 +164,18 @@ public class GestionPerso : MonoBehaviour
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
                 animatorEnnemi.Play("Blesser");
             }
+            if (Input.GetKey(KeyCode.L))
+            {
+                /*vie*/
+                pointsDeVie -= degatsFrappe; // soustraire les dégâts infligés aux points de vie du personnage
+                float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
+                barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
+                print("Vous avez frappé l'ennemi ! Il lui reste " + pointsDeVie + " points de vie.");
+                /*sons*/
+                int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
+                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
+                animatorEnnemi.Play("Blesser");
+            }
         }
     }
     /*/////////////////////////////////ZONE FONCTIONS/////////////////////////////////*/
@@ -169,12 +186,19 @@ public class GestionPerso : MonoBehaviour
 
     void Botte()
     {
-        animatorPerso.Play("Botte");
+        animatorPerso.Play("Kick");
     }
+    void Frappe()
+    {
+        animatorPerso.Play("Frappe");
+    }
+    /*void Saute()
+    {
+        animatorPerso.Play("Saute");
+    }*/
 
     void FinPartie()
     {
-        finPartie = true;
         MenuVictoire.SetActive(true);
         partieGagnee = true;
     }
