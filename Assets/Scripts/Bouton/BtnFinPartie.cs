@@ -9,6 +9,7 @@ public class BtnFinPartie : MonoBehaviour
     public GameObject MenuVictoire;
     static public int NbFinPerdu;
     static public int NbFinPartie;
+    static public bool partieRejouee = false; // pour débogger le cadenas qui bloque à nouveau si le joueur perd une partie qu'il a déja gagné
 
     public void RetourMap()
     {
@@ -23,6 +24,7 @@ public class BtnFinPartie : MonoBehaviour
 
         if (GestionPerso.partieGagnee == true || GestionPerso.partieGagnee == false) {
             GestionCompteParties();
+            GestionPartieGagnee();
             if (GestionPerso.partieGagnee == false) {
             GestionComptePertes();
             }
@@ -63,5 +65,9 @@ public class BtnFinPartie : MonoBehaviour
     {
         Debug.Log("NbPartiesPerdues : " + NbFinPerdu);
         Debug.Log("NbParties : " + NbFinPartie);
+    }
+
+    private void GestionPartieGagnee(){
+        partieRejouee = true;
     }
 }
