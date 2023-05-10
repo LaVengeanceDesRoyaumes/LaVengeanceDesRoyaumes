@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class GestionPerso : MonoBehaviour
 {
+    [Header("Zone effets spéciaux")]
+    public GameObject effetSang; // le prefab du système de particules
+    public GameObject[] effetAttaque; // le prefab du système de particules
+    public float particleDuration; // la durée de vie du système de particules en secondes
+
     [Header("Zone sons personnage")]
     private AudioSource audioSource;
     public AudioClip sonSwoosh;
@@ -128,8 +133,10 @@ public class GestionPerso : MonoBehaviour
         {
             animatorEnnemi.SetTrigger("Mort");
             Invoke("FinPartie", 4);
-            audioSource.clip = sonMort;
-            audioSource.Play();
+            //audioSource.clip = sonMort;
+            // audioSource.Play();
+            GetComponent<AudioSource>().PlayOneShot(sonMort);
+
             finPartie = true;
         }
     }
@@ -142,6 +149,13 @@ public class GestionPerso : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.J))
             {
+               
+                // Pour créer un nouveau GameObject à partir du prefab du système de particules
+                GameObject newParticles = Instantiate(effetSang, other.contacts[0].point, Quaternion.identity);
+
+                // Détruire le GameObject des particules après un certain temps(particleDuration)
+                Destroy(newParticles, particleDuration);
+
                 /*vie*/
                 pointsDeVie -= degats; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
@@ -154,6 +168,14 @@ public class GestionPerso : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.K))
             {
+                // Instancier un objet au hasard depuis le tableau de prefabs
+                int choixAleaIndex = Random.Range(0, effetAttaque.Length);
+                // Pour créer un nouveau GameObject à partir du prefab du système de particules
+                GameObject newParticles = Instantiate((effetAttaque[choixAleaIndex]), other.contacts[0].point, Quaternion.identity);
+
+                // Détruire le GameObject des particules après un certain temps(particleDuration)
+                Destroy(newParticles, particleDuration);
+
                 /*vie*/
                 pointsDeVie -= degatsBotte; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
@@ -166,6 +188,14 @@ public class GestionPerso : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.L))
             {
+                // Instancier un objet au hasard depuis le tableau de prefabs
+                int choixAleaIndex = Random.Range(0, effetAttaque.Length);
+                // Pour créer un nouveau GameObject à partir du prefab du système de particules
+                GameObject newParticles = Instantiate((effetAttaque[choixAleaIndex]), other.contacts[0].point, Quaternion.identity);
+
+                // Détruire le GameObject des particules après un certain temps(particleDuration)
+                Destroy(newParticles, particleDuration);
+
                 /*vie*/
                 pointsDeVie -= degatsFrappe; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
