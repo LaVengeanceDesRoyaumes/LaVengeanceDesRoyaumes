@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class GestionEnnemi : MonoBehaviour
 {
+    [Header("Zone effets spéciaux")]
+    public GameObject effetSang; // le prefab du système de particules
+    public GameObject[] effetAttaque; // le prefab du système de particules
+    public float particleDuration; // la durée de vie du système de particules en secondes
+
     [Header("Zone sons personnage")]
     private AudioSource audioSource;
     public AudioClip sonSwoosh;
@@ -18,7 +23,7 @@ public class GestionEnnemi : MonoBehaviour
     public float degats0 = 10f; // les dégâts infligés aux ennemis
     public float degats2 = 10f; // les dégâts infligés aux ennemis
     public float degats1 = 10f; // les dégâts infligés aux ennemis
-    public float degats3 = 10f; // les dégâts infligés aux ennemis
+    //public float degats3 = 10f; // les dégâts infligés aux ennemis
     public Image barreDeVie; // la barre de vie de l'ennemi
     public bool aiAttaque = false;
 
@@ -89,6 +94,13 @@ public class GestionEnnemi : MonoBehaviour
         {
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attaque"))
             {
+                // Instancier un objet au hasard depuis le tableau de prefabs
+                int choixAleaIndex = Random.Range(0, effetAttaque.Length);
+                // Pour créer un nouveau GameObject à partir du prefab du système de particules
+                GameObject newParticles = Instantiate((effetAttaque[choixAleaIndex]), other.contacts[0].point, Quaternion.identity);
+
+                // Détruire le GameObject des particules après un certain temps(particleDuration)
+                Destroy(newParticles, particleDuration);
                 int randomIndex = Random.Range(0, sonBlesser.Length);
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
                 animatorJoueur.Play("Blesser");
@@ -99,6 +111,11 @@ public class GestionEnnemi : MonoBehaviour
             }
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Frappe"))
             {
+                // Pour créer un nouveau GameObject à partir du prefab du système de particules
+                GameObject newParticles = Instantiate(effetSang, other.contacts[0].point, Quaternion.identity);
+
+                // Détruire le GameObject des particules après un certain temps(particleDuration)
+                Destroy(newParticles, particleDuration);
                 int randomIndex = Random.Range(0, sonBlesser.Length);
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
                 animatorJoueur.Play("Blesser");
@@ -109,6 +126,13 @@ public class GestionEnnemi : MonoBehaviour
             }
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Kick"))
             {
+                // Instancier un objet au hasard depuis le tableau de prefabs
+                int choixAleaIndex = Random.Range(0, effetAttaque.Length);
+                // Pour créer un nouveau GameObject à partir du prefab du système de particules
+                GameObject newParticles = Instantiate((effetAttaque[choixAleaIndex]), other.contacts[0].point, Quaternion.identity);
+
+                // Détruire le GameObject des particules après un certain temps(particleDuration)
+                Destroy(newParticles, particleDuration);
                 int randomIndex = Random.Range(0, sonBlesser.Length);
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
                 animatorJoueur.Play("Blesser");
