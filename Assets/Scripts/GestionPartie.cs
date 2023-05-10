@@ -18,23 +18,28 @@ public class GestionPartie : MonoBehaviour
         // trouver une façon plus efficace d'écrire ça?
         // un for loop ou la variable i represente la position dans le array vieCoeurs
         if (BtnFinPartie.NbFinPerdu == 1) {
-            VieCoeurs[2].SetActive(false);
+            VieCoeurs[0].SetActive(false);
         }
         if (BtnFinPartie.NbFinPerdu == 2) {
+            VieCoeurs[0].SetActive(false);
             VieCoeurs[1].SetActive(false);
-            VieCoeurs[2].SetActive(false);
         }
         if (BtnFinPartie.NbFinPerdu == 3) {
             VieCoeurs[0].SetActive(false);
             VieCoeurs[1].SetActive(false);
             VieCoeurs[2].SetActive(false);
+            //setactive la scene / image de "perte totale du jeu"
         }
 
 
-        if (GestionPerso.partieGagnee == true) {
+        if (BtnFinPartie.partieRejouee == true) {
             ConqMapJin[0].SetActive(true);
             CadenasMapJin[0].SetActive(false);
+
+            
         }
+
+
     }
 
     void PerteVie()

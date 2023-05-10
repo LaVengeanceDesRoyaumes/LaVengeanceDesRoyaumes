@@ -153,6 +153,7 @@ public class GestionEnnemi : MonoBehaviour
     void FinPartie()
     {
         MenuDefaite.SetActive(true);
+        GestionPerso.partieGagnee = false;
         partiePerdue = true;
     }
 }
