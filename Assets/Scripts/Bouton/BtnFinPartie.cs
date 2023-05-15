@@ -9,7 +9,6 @@ public class BtnFinPartie : MonoBehaviour
     public GameObject MenuVictoire;
     static public int NbFinPerdu;
     static public int NbFinPartie;
-    static public bool partieRejouee = false; // pour débogger le cadenas qui bloque à nouveau si le joueur perd une partie qu'il a déja gagné
 
     public void RetourMap()
     {
@@ -22,10 +21,9 @@ public class BtnFinPartie : MonoBehaviour
             SceneManager.LoadScene("SceneMapKratos");
         }
 
-        if (GestionPerso.partieGagnee == true || GestionPerso.partieGagnee == false) {
+        if (GestionEnnemi.partiePerdue == true /*|| GestionPerso.partieGagnee == true*/) {
             GestionCompteParties();
-            GestionPartieGagnee();
-            if (GestionPerso.partieGagnee == false) {
+            if (GestionEnnemi.partiePerdue == true) {
             GestionComptePertes();
             }
         }
@@ -43,9 +41,10 @@ public class BtnFinPartie : MonoBehaviour
             SceneManager.LoadScene("SceneNiveau1Kratos");
         }
 
-        if (GestionPerso.partieGagnee == true || GestionPerso.partieGagnee == false) {
+        if (GestionEnnemi.partiePerdue == true /*|| GestionPerso.partieGagnee == true*/) {
             GestionCompteParties();
-            if (GestionPerso.partieGagnee == false) {
+
+            if (GestionEnnemi.partiePerdue == true) {
             GestionComptePertes();
             }
         }
@@ -65,9 +64,5 @@ public class BtnFinPartie : MonoBehaviour
     {
         Debug.Log("NbPartiesPerdues : " + NbFinPerdu);
         Debug.Log("NbParties : " + NbFinPartie);
-    }
-
-    private void GestionPartieGagnee(){
-        partieRejouee = true;
     }
 }
