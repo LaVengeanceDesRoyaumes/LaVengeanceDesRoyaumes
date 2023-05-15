@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: 2d10e88c3c1dd4e22885140c3e3ec7ec
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #0
+    second: {fileID: 2100000, guid: 540860d7a646247429427f01947f2f6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_ceqiang_A
+    second: {fileID: 2100000, guid: 953ee88e1fc08481ba457c6fb47ff42c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_dibian_B
+    second: {fileID: 2100000, guid: 226c8da180ddc4cefb4fcf7d6dde5fe9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_fangding_A
+    second: {fileID: 2100000, guid: 468c9892d3efe4c40a85cd51d1adbf70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_fangdingbeim
+    second: {fileID: 2100000, guid: 5e186426e2b534c719c208214a0947d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_fangzizhuang
+    second: {fileID: 2100000, guid: 56e917a7e7ca5424a9b407e980b7ae33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_loulian_A
+    second: {fileID: 2100000, guid: b58a67864e5fb4fd9bd76212e489a242, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_menlian_A
+    second: {fileID: 2100000, guid: 1b5c32d5b869d46999482e80bebd169d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_qianmian_A
+    second: {fileID: 2100000, guid: 3edb403baa54445e4b5cb9b2e06ace9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_qianmian_C
+    second: {fileID: 2100000, guid: f36b9b3d503b54457bf80a92f9f0a034, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_xiaomen_A
+    second: {fileID: 2100000, guid: 02a917c63d82f46ca9270bba44fd75ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_zhuangshi_B
+    second: {fileID: 2100000, guid: 63041b46178724fcb9adaff66b99b698, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mjy_zhuzi_A
+    second: {fileID: 2100000, guid: 5210c18a9c6324e90969db4ed4936454, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_bu_B
+    second: {fileID: 2800000, guid: c3530e36b98bc4d29bad3888c5c2b420, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_ceqiang_A
+    second: {fileID: 2800000, guid: 7aad0a16e35ee42a5842424e98bb50a0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_dibian_B
+    second: {fileID: 2800000, guid: 9002e52f7f64141829aab611172f5f80, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_fangding_A
+    second: {fileID: 2800000, guid: 083321d77e0904a80b4a72c6e04697ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_fangdingbeimian_A
+    second: {fileID: 2800000, guid: 9ae789b6492fd4bf7a7cf9ca4e96c5f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_fangzizhuangshi_A
+    second: {fileID: 2800000, guid: c4b5d84901a8c41d49b816d91a4f76b8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_loulian_A
+    second: {fileID: 2800000, guid: 23b299d6eedb84370aa1839891e7fa45, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_menlian_A
+    second: {fileID: 2800000, guid: debfcb8fdf7e14a9bbb203f02dba3514, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_qianmian_A
+    second: {fileID: 2800000, guid: dbf34284f3c6e487386d35bdc4f7f933, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_qianmian_C
+    second: {fileID: 2800000, guid: 2d5c0f98e985341a4b1a1037e5e6983f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_xiaomen_A
+    second: {fileID: 2800000, guid: 3cfbcb4aabbf14ccba271942a70eebbc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_zhuangshi_B
+    second: {fileID: 2800000, guid: e056397a06921457287171fd20c67f33, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jy_zhuzi_A
+    second: {fileID: 2800000, guid: d8336f48354e24409a356d9f7f316698, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 8
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.08
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
