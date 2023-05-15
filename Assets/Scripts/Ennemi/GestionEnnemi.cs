@@ -85,8 +85,11 @@ public class GestionEnnemi : MonoBehaviour
     /*/////////////////////////////////ZONE COLLISIONS//////////////////////////////*/
     private void OnCollisionEnter(Collision other)
     {
+
+     
         if (other.gameObject.CompareTag("joueur"))
         {
+            print(animator.GetCurrentAnimatorStateInfo(0));
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attaque"))
             {
                 int randomIndex = Random.Range(0, sonBlesser.Length);
@@ -95,7 +98,7 @@ public class GestionEnnemi : MonoBehaviour
                 pointsDeVie -= degats0; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
-                print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
+                print("l'ennemi vous a attaquer  ! Il vous reste " + pointsDeVie + " points de vie.");
             }
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Frappe"))
             {
@@ -115,18 +118,8 @@ public class GestionEnnemi : MonoBehaviour
                 pointsDeVie -= degats2; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
                 barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
-                print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
+                print("l'ennemi vous a botter ! Il vous reste " + pointsDeVie + " points de vie.");
             }
-            /*if (animator.GetCurrentAnimatorStateInfo(0).IsName("KickHaut"))
-            {
-                int randomIndex = Random.Range(0, sonBlesser.Length);
-                GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
-                animatorJoueur.Play("Blesser");
-                pointsDeVie -= degats3; // soustraire les dégâts infligés aux points de vie du personnage
-                float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
-                barreDeVie.fillAmount = pourcentageDeVie; // mettre à jour le fill amount de la barre de vie
-                print("l'ennemi vous a frappé  ! Il vous reste " + pointsDeVie + " points de vie.");
-            }*/
         }
     }
 
@@ -137,7 +130,7 @@ public class GestionEnnemi : MonoBehaviour
         {
             // Lancement de l'animation
             numeroA = Random.Range(1, 4);
-            Debug.Log("attaque choisis" + numeroA);
+            //Debug.Log("attaque choisis" + numeroA);
             animator.SetTrigger("Attaque_" + numeroA);
             // Rendre la variable attaque true
             aiAttaque = true;
@@ -153,7 +146,6 @@ public class GestionEnnemi : MonoBehaviour
     void FinPartie()
     {
         MenuDefaite.SetActive(true);
-        GestionPerso.partieGagnee = false;
         partiePerdue = true;
     }
 }
