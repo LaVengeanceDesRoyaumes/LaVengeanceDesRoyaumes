@@ -4237,7 +4237,7 @@ GameObject:
   - component: {fileID: 1368522717}
   - component: {fileID: 1368522716}
   m_Layer: 5
-  m_Name: coeur(1)
+  m_Name: coeur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6090,7 +6090,7 @@ GameObject:
   - component: {fileID: 1825569447}
   - component: {fileID: 1825569446}
   m_Layer: 5
-  m_Name: coeur(3)
+  m_Name: coeur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6288,7 +6288,7 @@ GameObject:
   - component: {fileID: 1883717928}
   - component: {fileID: 1883717927}
   m_Layer: 5
-  m_Name: coeur(2)
+  m_Name: coeur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

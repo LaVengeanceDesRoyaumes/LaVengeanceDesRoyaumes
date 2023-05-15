@@ -18,8 +18,8 @@ public class GestionArme : MonoBehaviour
 
     private void Update()
     {
-        arme.transform.SetParent(pointDancrage);
-        arme.transform.localPosition = Vector3.zero;
-        arme.transform.localRotation = rotationOriginale;
+        //arme.transform.SetParent(pointDancrage);
+       // arme.transform.localPosition = Vector3.zero;
+       // arme.transform.localRotation = rotationOriginale;
     }
 }
