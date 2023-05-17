@@ -7401,7 +7401,7 @@ MonoBehaviour:
   animatorEnnemi: {fileID: 1734490540}
   rigidbodyPerso: {fileID: 1713302688}
   vitesseDeplacement: 100
-  hauteurSaut: 99
+  hauteurSaut: 0
   pointsDeVie: 100
   degats: 1
   degatsFrappe: 5
