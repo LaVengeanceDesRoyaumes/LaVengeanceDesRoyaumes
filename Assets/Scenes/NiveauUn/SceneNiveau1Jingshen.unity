@@ -7384,6 +7384,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f81d66be24287e44ba5f2dd5126a6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effetSang: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+  effetAttaque:
+  - {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
+  - {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+  - {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  particleDuration: 0.3
   sonSwoosh: {fileID: 8300000, guid: 31066f1d3b686e940b0105b00d8759bd, type: 3}
   sonAttaque: {fileID: 8300000, guid: 108caaa65ab028d4b859d927be4cfc0b, type: 3}
   sonBlesser:
@@ -7394,16 +7400,13 @@ MonoBehaviour:
   animatorPerso: {fileID: 1713302687}
   animatorEnnemi: {fileID: 1734490540}
   rigidbodyPerso: {fileID: 1713302688}
-  rigidbodyEnnemie: {fileID: 1734490539}
   vitesseDeplacement: 100
+  hauteurSaut: 0
   pointsDeVie: 100
   degats: 1
   degatsFrappe: 5
   degatsBotte: 3
   barreDeVie: {fileID: 248439154}
-  forceReculeCoup: 7
-  forceReculeFrappe: 7
-  forceReculeBotte: 7
   MenuVictoire: {fileID: 88109931}
 --- !u!1 &1734490538 stripped
 GameObject:

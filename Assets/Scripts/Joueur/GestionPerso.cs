@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class GestionPerso : MonoBehaviour
 {
+    [Header("Zone effets spéciaux")]
+    public GameObject effetSang; // le prefab du système de particules
+    public GameObject[] effetAttaque; // le prefab du système de particules
+    public float particleDuration; // la durée de vie du système de particules en secondes
+
     [Header("Zone sons personnage")]
     private AudioSource audioSource;
     public AudioClip sonSwoosh;
@@ -19,10 +24,9 @@ public class GestionPerso : MonoBehaviour
 
     [Header("Vitesse et rigidbody personnage")]
     public Rigidbody rigidbodyPerso;
-    public Rigidbody rigidbodyEnnemie;
     public float vitesseDeplacement = 100f;
     private float vDeplacement;
-    //public float hauteurSaut;
+    public float hauteurSaut;
 
     [Header("Zone detection des coups")]
     public float pointsDeVie = 100f; // points de vie du personnage
@@ -30,9 +34,6 @@ public class GestionPerso : MonoBehaviour
     public float degatsFrappe = 4f; // les dégâts avec le kick 2
     public float degatsBotte = 5f; // les dégâts infligés aux ennemis avec kick
     public Image barreDeVie; // la barre de vie de l'ennemi
-    public float forceReculeCoup = 7f;
-    public float forceReculeFrappe = 7f;
-    public float forceReculeBotte = 7f;
 
     [Header("Zone gestion de partie")]
     public static bool finPartie = false;
@@ -132,20 +133,29 @@ public class GestionPerso : MonoBehaviour
         {
             animatorEnnemi.SetTrigger("Mort");
             Invoke("FinPartie", 4);
-            audioSource.clip = sonMort;
-            audioSource.Play();
+            //audioSource.clip = sonMort;
+            // audioSource.Play();
+            GetComponent<AudioSource>().PlayOneShot(sonMort);
+
             finPartie = true;
         }
     }
 
 
     /*/////////////////////////////////ZONE COLLISION//////////////////////////////*/
-     void OnCollisionEnter(Collision other)
+    void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("ennemi"))
         {
             if (Input.GetKey(KeyCode.J))
             {
+
+                // Pour créer un nouveau GameObject à partir du prefab du système de particules
+                GameObject newParticles = Instantiate(effetSang, other.contacts[0].point, Quaternion.identity);
+
+                // Détruire le GameObject des particules après un certain temps(particleDuration)
+                Destroy(newParticles, particleDuration);
+
                 /*vie*/
                 pointsDeVie -= degats; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
@@ -155,12 +165,17 @@ public class GestionPerso : MonoBehaviour
                 int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
                 animatorEnnemi.Play("Blesser");
-
-                // frapper l'ennemi et le faire reculer en x
-                rigidbodyEnnemie.AddForce(transform.forward * forceReculeCoup, ForceMode.Impulse);
             }
             if (Input.GetKey(KeyCode.K))
             {
+                // Instancier un objet au hasard depuis le tableau de prefabs
+                int choixAleaIndex = Random.Range(0, effetAttaque.Length);
+                // Pour créer un nouveau GameObject à partir du prefab du système de particules
+                GameObject newParticles = Instantiate((effetAttaque[choixAleaIndex]), other.contacts[0].point, Quaternion.identity);
+
+                // Détruire le GameObject des particules après un certain temps(particleDuration)
+                Destroy(newParticles, particleDuration);
+
                 /*vie*/
                 pointsDeVie -= degatsBotte; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
@@ -170,12 +185,17 @@ public class GestionPerso : MonoBehaviour
                 int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
                 animatorEnnemi.Play("Blesser");
-
-                // frapper l'ennemi et le faire reculer en x
-                rigidbodyEnnemie.AddForce(transform.forward * forceReculeBotte, ForceMode.Impulse);
             }
             if (Input.GetKey(KeyCode.L))
             {
+                // Instancier un objet au hasard depuis le tableau de prefabs
+                int choixAleaIndex = Random.Range(0, effetAttaque.Length);
+                // Pour créer un nouveau GameObject à partir du prefab du système de particules
+                GameObject newParticles = Instantiate((effetAttaque[choixAleaIndex]), other.contacts[0].point, Quaternion.identity);
+
+                // Détruire le GameObject des particules après un certain temps(particleDuration)
+                Destroy(newParticles, particleDuration);
+
                 /*vie*/
                 pointsDeVie -= degatsFrappe; // soustraire les dégâts infligés aux points de vie du personnage
                 float pourcentageDeVie = pointsDeVie / 100f; // calculer le pourcentage de vie restant
@@ -185,9 +205,6 @@ public class GestionPerso : MonoBehaviour
                 int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
                 animatorEnnemi.Play("Blesser");
-
-                // frapper l'ennemi et le faire reculer en x
-                rigidbodyEnnemie.AddForce(transform.forward * forceReculeFrappe, ForceMode.Impulse);
             }
         }
     }
