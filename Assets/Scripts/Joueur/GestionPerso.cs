@@ -24,6 +24,7 @@ public class GestionPerso : MonoBehaviour
 
     [Header("Vitesse et rigidbody personnage")]
     public Rigidbody rigidbodyPerso;
+    public Rigidbody enemyRigidbody;
     public float vitesseDeplacement = 100f;
     private float vDeplacement;
     public float hauteurSaut;
@@ -33,6 +34,9 @@ public class GestionPerso : MonoBehaviour
     public float degats = 3f; // les dégâts infligés aux ennemis
     public float degatsFrappe = 4f; // les dégâts avec le kick 2
     public float degatsBotte = 5f; // les dégâts infligés aux ennemis avec kick
+    public float reculeAttaque = 100;
+    public float reculeFrappe = 100;
+    public float reculeKick = 1000;
     public Image barreDeVie; // la barre de vie de l'ennemi
 
     [Header("Zone gestion de partie")]
@@ -165,6 +169,8 @@ public class GestionPerso : MonoBehaviour
                 int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
                 animatorEnnemi.Play("Blesser");
+
+                enemyRigidbody.AddForce(transform.forward * reculeAttaque, ForceMode.Impulse);
             }
             if (Input.GetKey(KeyCode.K))
             {
@@ -185,6 +191,8 @@ public class GestionPerso : MonoBehaviour
                 int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
                 animatorEnnemi.Play("Blesser");
+
+                enemyRigidbody.AddForce(transform.forward * reculeKick, ForceMode.Impulse);
             }
             if (Input.GetKey(KeyCode.L))
             {
@@ -205,6 +213,8 @@ public class GestionPerso : MonoBehaviour
                 int randomIndex = Random.Range(0, sonBlesser.Length);//Jouer aléatoirement le son de mon personnage lorsqu'il est blessé 
                 GetComponent<AudioSource>().PlayOneShot(sonBlesser[randomIndex]);
                 animatorEnnemi.Play("Blesser");
+
+                enemyRigidbody.AddForce(transform.forward * reculeFrappe, ForceMode.Impulse);
             }
         }
     }
