@@ -7364,8 +7364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fenetreTuto: {fileID: 312657508}
-  personnage1: {fileID: 0}
-  personnage2: {fileID: 0}
+  personnage1: {fileID: 571081148}
+  personnage2: {fileID: 1353025799}
 --- !u!1 &1584878611
 GameObject:
   m_ObjectHideFlags: 0
