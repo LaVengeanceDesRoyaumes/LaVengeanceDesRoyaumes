@@ -4619,9 +4619,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f81d66be24287e44ba5f2dd5126a6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effetSang: {fileID: 0}
-  effetAttaque: []
-  particleDuration: 0
+  effetSang: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+  effetAttaque:
+  - {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
+  - {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+  - {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  particleDuration: 0.3
   sonSwoosh: {fileID: 8300000, guid: 31066f1d3b686e940b0105b00d8759bd, type: 3}
   sonAttaque: {fileID: 8300000, guid: 108caaa65ab028d4b859d927be4cfc0b, type: 3}
   sonBlesser:
