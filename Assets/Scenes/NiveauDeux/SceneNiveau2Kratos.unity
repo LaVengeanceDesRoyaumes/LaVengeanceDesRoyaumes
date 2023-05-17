@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.6
   m_CustomReflection: {fileID: 8900000, guid: 3b5eaa969aa89fb45b025e2ff7d7695a, type: 3}
   m_Sun: {fileID: 1194554256}
-  m_IndirectSpecularColor: {r: 0.11714187, g: 0.13918845, b: 0.16028894, a: 0.6}
+  m_IndirectSpecularColor: {r: 0.11710164, g: 0.13936886, b: 0.16031674, a: 0.6}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -3184,6 +3184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f81d66be24287e44ba5f2dd5126a6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effetSang: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+  effetAttaque:
+  - {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
+  - {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+  - {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  particleDuration: 0.3
   sonSwoosh: {fileID: 8300000, guid: 31066f1d3b686e940b0105b00d8759bd, type: 3}
   sonAttaque: {fileID: 8300000, guid: 108caaa65ab028d4b859d927be4cfc0b, type: 3}
   sonBlesser:
@@ -3194,16 +3200,13 @@ MonoBehaviour:
   animatorPerso: {fileID: 628435822}
   animatorEnnemi: {fileID: 1882675340}
   rigidbodyPerso: {fileID: 628435824}
-  rigidbodyEnnemie: {fileID: 1882675345}
   vitesseDeplacement: 100
+  hauteurSaut: 0
   pointsDeVie: 100
   degats: 1
   degatsFrappe: 2
   degatsBotte: 3
   barreDeVie: {fileID: 455263868}
-  forceReculeCoup: 100
-  forceReculeFrappe: 2500
-  forceReculeBotte: 2000
   MenuVictoire: {fileID: 1840969082}
 --- !u!95 &628435822
 Animator:
@@ -6867,7 +6870,7 @@ MonoBehaviour:
   - {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
   - {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   - {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
-  particleDuration: 0
+  particleDuration: 0.3
   sonSwoosh: {fileID: 8300000, guid: 31066f1d3b686e940b0105b00d8759bd, type: 3}
   sonAttaque: {fileID: 8300000, guid: 108caaa65ab028d4b859d927be4cfc0b, type: 3}
   sonBlesser:

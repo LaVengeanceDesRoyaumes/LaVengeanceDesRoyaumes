@@ -29,7 +29,7 @@ public class GestionPerso : MonoBehaviour
     public float hauteurSaut;
 
     [Header("Zone detection des coups")]
-    public float pointsDeVie = 100f; // points de vie du personnage
+    public float pointsDeVie = 100f; // points de vie de l'ennemie
     public float degats = 3f; // les dégâts infligés aux ennemis
     public float degatsFrappe = 4f; // les dégâts avec le kick 2
     public float degatsBotte = 5f; // les dégâts infligés aux ennemis avec kick

@@ -7488,6 +7488,7 @@ MonoBehaviour:
   distanceArret: 2
   MenuDefaite: {fileID: 1319522191}
   numeroA: 3
+  personnageCollider: {fileID: 1734490542}
 --- !u!136 &1734490542
 CapsuleCollider:
   m_ObjectHideFlags: 0

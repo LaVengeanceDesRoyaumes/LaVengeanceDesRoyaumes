@@ -94,6 +94,7 @@ public class GestionEnnemi : MonoBehaviour
      
         if (other.gameObject.CompareTag("joueur"))
         {
+            print(animator.GetCurrentAnimatorStateInfo(0));
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attaque"))
             {
                 // Instancier un objet au hasard depuis le tableau de prefabs
