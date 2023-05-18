@@ -4558,6 +4558,7 @@ MonoBehaviour:
   reculeKick: 1000
   barreDeVie: {fileID: 1893311103}
   MenuVictoire: {fileID: 317569071}
+  autrePersonnage: {fileID: 1353025799}
 --- !u!82 &571081151
 AudioSource:
   m_ObjectHideFlags: 0

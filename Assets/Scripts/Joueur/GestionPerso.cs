@@ -44,6 +44,10 @@ public class GestionPerso : MonoBehaviour
     public GameObject MenuVictoire;
     public static bool partieGagnee;
 
+    [Header("Zone retourne perso")]
+    private bool estRetourne = false; // Indique si le personnage est retourné ou non
+    public GameObject autrePersonnage; // Référence à l'autre personnage
+
     private void Awake()
     {
         // Récupèrer l'AudioSource du GameObject actuelle
@@ -83,53 +87,66 @@ public class GestionPerso : MonoBehaviour
                 audioSource.clip = sonAttaque;
                 audioSource.Play();
             }
-            /*if (Input.GetKeyDown(KeyCode.W))
+            /* GERER RETOURNEMENT*/
+            if (Input.GetKeyDown(KeyCode.R))
             {
-                Invoke("Saute", 0);
-                //rigidbodyPerso.AddForce(Vector3.up * hauteurSaut);
-                rigidbodyPerso.AddForce(Vector3.up * hauteurSaut, ForceMode.Impulse);
-            }*/
+                RetournerPersonnages();
+            }
 
-            vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
-            //rigidbodyPerso.velocity = transform.forward * vDeplacement;
+            float vDeplacement = Input.GetAxis("Horizontal") * vitesseDeplacement;
+
+            if (estRetourne)
+            {
+                // Inverser les valeurs de déplacement gauche et droite
+                vDeplacement = -vDeplacement;
+            }
+
             rigidbodyPerso.velocity = new Vector2(vDeplacement, 0);
 
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
-                animatorPerso.SetBool("MouvementAvance", true);
+                if (estRetourne)
+                {
+                    animatorPerso.SetBool("MouvementRecule", true);
+                }
+                else
+                {
+                    animatorPerso.SetBool("MouvementAvance", true);
+                }
             }
-            else if (Input.GetKeyUp(KeyCode.D))
+            else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
             {
-                animatorPerso.SetBool("MouvementAvance", false);
-            }
-
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                animatorPerso.SetBool("MouvementAvance", true);
-            }
-            else if (Input.GetKeyUp(KeyCode.RightArrow))
-            {
-                animatorPerso.SetBool("MouvementAvance", false);
-            }
-
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                animatorPerso.SetBool("MouvementRecule", true);
-            }
-            else if (Input.GetKeyUp(KeyCode.A))
-
-            {
-                animatorPerso.SetBool("MouvementRecule", false);
+                if (estRetourne)
+                {
+                    animatorPerso.SetBool("MouvementRecule", false);
+                }
+                else
+                {
+                    animatorPerso.SetBool("MouvementAvance", false);
+                }
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                animatorPerso.SetBool("MouvementRecule", true);
+                if (estRetourne)
+                {
+                    animatorPerso.SetBool("MouvementAvance", true);
+                }
+                else
+                {
+                    animatorPerso.SetBool("MouvementRecule", true);
+                }
             }
-            else if (Input.GetKeyUp(KeyCode.LeftArrow))
-
+            else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
             {
-                animatorPerso.SetBool("MouvementRecule", false);
+                if (estRetourne)
+                {
+                    animatorPerso.SetBool("MouvementAvance", false);
+                }
+                else
+                {
+                    animatorPerso.SetBool("MouvementRecule", false);
+                }
             }
         }
 
@@ -241,6 +258,18 @@ public class GestionPerso : MonoBehaviour
     {
         MenuVictoire.SetActive(true);
         partieGagnee = true;
+    }
+
+    public void RetournerPersonnages()
+    {
+        // Inverser la valeur de estRetourne
+        estRetourne = !estRetourne;
+
+        // Inverser la rotation du personnage actuel
+        transform.Rotate(Vector3.up, 180f);
+
+        // Inverser la rotation de l'autre personnage
+        autrePersonnage.transform.Rotate(Vector3.up, 180f);
     }
 
 }

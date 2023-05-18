@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.6
   m_CustomReflection: {fileID: 8900000, guid: 3b5eaa969aa89fb45b025e2ff7d7695a, type: 3}
   m_Sun: {fileID: 1194554256}
-  m_IndirectSpecularColor: {r: 0.117113814, g: 0.13936186, b: 0.1602855, a: 0.6}
+  m_IndirectSpecularColor: {r: 0.11714187, g: 0.13918845, b: 0.16028894, a: 0.6}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -868,11 +868,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182248309}
   m_CullTransparentMesh: 1
---- !u!4 &190697406 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5048025441337412694, guid: e397a7bdaab8949e0a4ec16fe0b1e1c9, type: 3}
-  m_PrefabInstance: {fileID: 1858885232}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &201646572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,6 +3252,7 @@ MonoBehaviour:
   reculeKick: 1000
   barreDeVie: {fileID: 455263868}
   MenuVictoire: {fileID: 1840969082}
+  autrePersonnage: {fileID: 1882675338}
 --- !u!95 &628435822
 Animator:
   serializedVersion: 5
@@ -3408,20 +3404,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e397a7bdaab8949e0a4ec16fe0b1e1c9, type: 3}
   m_PrefabInstance: {fileID: 1858885232}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &628435827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628435820}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e48ac9cb38b42345b6eca93b87dbe56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointDancrage: {fileID: 190697406}
-  arme: {fileID: 8309541314512930569, guid: 52d39069457eb4c459eee94c3936cc78, type: 3}
 --- !u!1 &631994862
 GameObject:
   m_ObjectHideFlags: 0
@@ -6973,9 +6955,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 09a180207b8236a4d927aef796301664, type: 3}
   sonMort: {fileID: 8300000, guid: 87d5e5e9bf47acf4a9bc4336e2da39db, type: 3}
   pointsDeVie: 100
-  degats0: 5
-  degats2: 6
-  degats1: 7
+  degats0: 6
+  degats2: 7
+  degats1: 8
   barreDeVie: {fileID: 1609410497}
   aiAttaque: 0
   tempsAttaque: 4

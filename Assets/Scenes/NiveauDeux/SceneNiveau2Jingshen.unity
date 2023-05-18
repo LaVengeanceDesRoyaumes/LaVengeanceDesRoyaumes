@@ -4929,6 +4929,7 @@ MonoBehaviour:
   reculeKick: 2000
   barreDeVie: {fileID: 1364320827}
   MenuVictoire: {fileID: 2008218826}
+  autrePersonnage: {fileID: 1140212158}
 --- !u!1 &743474471
 GameObject:
   m_ObjectHideFlags: 0
@@ -6861,9 +6862,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 09a180207b8236a4d927aef796301664, type: 3}
   sonMort: {fileID: 8300000, guid: 87d5e5e9bf47acf4a9bc4336e2da39db, type: 3}
   pointsDeVie: 100
-  degats0: 5
-  degats2: 6
-  degats1: 7
+  degats0: 6
+  degats2: 7
+  degats1: 8
   barreDeVie: {fileID: 1843592516}
   aiAttaque: 0
   tempsAttaque: 4
@@ -9974,7 +9975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1994848882
 RectTransform:
   m_ObjectHideFlags: 0
