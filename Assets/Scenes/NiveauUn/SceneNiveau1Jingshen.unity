@@ -4635,7 +4635,7 @@ MonoBehaviour:
   animatorPerso: {fileID: 589792188}
   animatorEnnemi: {fileID: 192950907}
   rigidbodyPerso: {fileID: 589792191}
-  enemyRigidbody: {fileID: 0}
+  enemyRigidbody: {fileID: 192950912}
   vitesseDeplacement: 100
   hauteurSaut: 0
   pointsDeVie: 100
@@ -4647,6 +4647,7 @@ MonoBehaviour:
   reculeKick: 1000
   barreDeVie: {fileID: 248439154}
   MenuVictoire: {fileID: 88109931}
+  autrePersonnage: {fileID: 192950906}
 --- !u!1 &615988044
 GameObject:
   m_ObjectHideFlags: 0
