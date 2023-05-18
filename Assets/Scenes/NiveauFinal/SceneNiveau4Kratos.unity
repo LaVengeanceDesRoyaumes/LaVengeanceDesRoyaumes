@@ -5220,18 +5220,14 @@ MonoBehaviour:
   hauteurSaut: 0
   pointsDeVie: 100
   degats: 1
-  degatsFrappe: 5
+  degatsFrappe: 4
   degatsBotte: 3
   reculeAttaque: 100
   reculeFrappe: 100
   reculeKick: 1000
   barreDeVie: {fileID: 371479241}
   MenuVictoire: {fileID: 819199483}
-  autrePersonnage: {fileID: 1495901598}
-  toucheAvancer: 119
-  toucheReculer: 115
-  toucheGauche: 97
-  toucheDroite: 100
+  autrePersonnage: {fileID: 1495901590}
 --- !u!1 &1177486325
 GameObject:
   m_ObjectHideFlags: 0
