@@ -22,9 +22,6 @@ public class BtnVolume : MonoBehaviour
     public GameObject sonPerso;
     public GameObject sonEnnemi;
 
-
-
-
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -39,26 +36,23 @@ public class BtnVolume : MonoBehaviour
         volumeSonsBas.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(SonBas);
         volumeSonsNorm.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(SonNorm);
         volumeSonsMax.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(SonMax);
-
-       // float leSonPerso = sonPerso.GetComponent<AudioSource>().volume;
-
     }
 
-    public void VolumeMin()
+ 
+    //-------------------------------------------------------------------//
+           // VOLUME MUSIQUE 
+    //-------------------------------------------------------------------//
+   public void VolumeMin()
     {
             audioSource.volume = 0f; // met le volume à 0%
             Debug.Log("Volume est à 0%!");
            
         
     }
-    //-------------------------------------------------------------------//
-           // VOLUME MUSIQUE 
-    //-------------------------------------------------------------------//
-
 
     public void VolumeBas()
     {
-            audioSource.volume = 0.1f; // met le volume à 20%
+            audioSource.volume = 0.1f; // met le volume à 10%
             Debug.Log("Volume est à 10%!");
            
     }
