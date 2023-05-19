@@ -5796,7 +5796,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 813104067}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: db56508d4df92b54587afde8469bc774, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &813104067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7518,6 +7530,7 @@ GameObject:
   - component: {fileID: 1248175506}
   - component: {fileID: 1248175505}
   - component: {fileID: 1248175508}
+  - component: {fileID: 1248175509}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -7687,6 +7700,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1248175509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248175502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db56508d4df92b54587afde8469bc774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeBoutonMin: {fileID: 813104064}
+  volumeBoutonBas: {fileID: 633067611}
+  volumeBoutonNorm: {fileID: 1115381876}
+  volumeBoutonMax: {fileID: 524537653}
+  audioSource: {fileID: 1248175508}
+  volumeDecrement: 0
+  volumeSonsMin: {fileID: 643313655}
+  volumeSonsBas: {fileID: 187357680}
+  volumeSonsNorm: {fileID: 2008924346}
+  volumeSonsMax: {fileID: 2087423545}
+  sonPerso: {fileID: 589792185}
+  sonEnnemi: {fileID: 192950906}
 --- !u!1001 &1302150549
 PrefabInstance:
   m_ObjectHideFlags: 0
