@@ -13,17 +13,17 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Demon__diffuse
-    second: {fileID: 2800000, guid: 50232187b4a490241a524526f439ecc8, type: 3}
+    second: {fileID: 2800000, guid: b55a60652fd4808438ea05520e76fa18, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Demon__normal
-    second: {fileID: 2800000, guid: 93b973d8f489e85468611394a177dc5c, type: 3}
+    second: {fileID: 2800000, guid: a24cb787af5a98f46b4dfbb518ac3a12, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Demon__specular
-    second: {fileID: 2800000, guid: 734bed48fe05fb9438c7e15a8b80db00, type: 3}
+    second: {fileID: 2800000, guid: e8ea0650e9406d642a8e5397ea834a9a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -44,7 +44,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -111,13 +111,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
