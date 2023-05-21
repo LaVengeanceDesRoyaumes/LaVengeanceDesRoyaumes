@@ -16,6 +16,8 @@ public class GestionPerso : MonoBehaviour
     public AudioClip sonAttaque;
     public AudioClip[] sonBlesser;
     public AudioClip sonMort;
+    private bool sonMortJoue = false; // Variable pour suivre l'état de lecture du son de mort
+
 
     [Header("Zone animation personnage")]
     public Animator animatorPerso;
@@ -154,9 +156,11 @@ public class GestionPerso : MonoBehaviour
         {
             animatorEnnemi.SetTrigger("Mort");
             Invoke("FinPartie", 4);
-            //audioSource.clip = sonMort;
-            // audioSource.Play();
-            GetComponent<AudioSource>().PlayOneShot(sonMort);
+            if (!sonMortJoue)
+            {
+                GetComponent<AudioSource>().PlayOneShot(sonMort);
+                sonMortJoue = true; // Définir la variable sur "true" lorsque le son de mort est joué
+            }
 
             finPartie = true;
         }
