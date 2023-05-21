@@ -4209,10 +4209,10 @@ MonoBehaviour:
   sonSwoosh: {fileID: 8300000, guid: 31066f1d3b686e940b0105b00d8759bd, type: 3}
   sonAttaque: {fileID: 8300000, guid: 108caaa65ab028d4b859d927be4cfc0b, type: 3}
   sonBlesser:
-  - {fileID: 8300000, guid: 23577913d25f7914eb683c5bdef18036, type: 3}
-  - {fileID: 8300000, guid: fcb0e902348322a4abcd9f2d7d263a56, type: 3}
-  - {fileID: 8300000, guid: 09a180207b8236a4d927aef796301664, type: 3}
-  sonMort: {fileID: 8300000, guid: 87d5e5e9bf47acf4a9bc4336e2da39db, type: 3}
+  - {fileID: 8300000, guid: addc6f54d9182cc4a9ca03de59d6e7dd, type: 3}
+  - {fileID: 8300000, guid: 40de3956e915ae942a22e603efd3e97d, type: 3}
+  - {fileID: 8300000, guid: 11d17531d880cb84eb62d4991e4097ea, type: 3}
+  sonMort: {fileID: 8300000, guid: b43bc4db64439d34fb964be761b09463, type: 3}
   pointsDeVie: 100
   degats0: 6
   degats2: 7
@@ -11792,7 +11792,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 23577913d25f7914eb683c5bdef18036, type: 3}
   - {fileID: 8300000, guid: fcb0e902348322a4abcd9f2d7d263a56, type: 3}
   - {fileID: 8300000, guid: 09a180207b8236a4d927aef796301664, type: 3}
-  sonMort: {fileID: 8300000, guid: 87d5e5e9bf47acf4a9bc4336e2da39db, type: 3}
+  sonMort: {fileID: 8300000, guid: 9c7776120e08a4148895e3892842a81f, type: 3}
   animatorPerso: {fileID: 1021968687}
   animatorEnnemi: {fileID: 330946970}
   rigidbodyPerso: {fileID: 1021968691}
