@@ -16,12 +16,12 @@ public class BtnChangementScene : MonoBehaviour
     public void ChargementMapKratos()
     {
         SceneManager.LoadScene("SceneMapKratos");
-        royaumeChoisi = "kratos";
+        //royaumeChoisi = "kratos";
     }
     public void ChargementMapJingshen()
     {
         SceneManager.LoadScene("SceneMapJingshen");
-        royaumeChoisi = "jingshen";
+        //royaumeChoisi = "jingshen";
     }
 
     // Boutons de retour
@@ -36,5 +36,17 @@ public class BtnChangementScene : MonoBehaviour
     public void RetourAccueil()
     {
         SceneManager.LoadScene("SceneDemarrage");
+    }
+
+    void Update()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        Debug.Log(scene.name);
+        if (scene.name.Contains("Kratos")){
+            royaumeChoisi = "kratos";
+        }
+        else if (scene.name.Contains("Jingshen")){
+            royaumeChoisi = "jingshen";
+        }
     }
 }

@@ -9,6 +9,7 @@ public class BtnFinPartie : MonoBehaviour
     public GameObject MenuVictoire;
     static public int NbFinPerdu;
     static public int NbFinPartie;
+    static public int NbFinGagne;
 
     public void RetourMap()
     {
@@ -21,10 +22,14 @@ public class BtnFinPartie : MonoBehaviour
             SceneManager.LoadScene("SceneMapKratos");
         }
 
-        if (GestionEnnemi.partiePerdue == true /*|| GestionPerso.partieGagnee == true*/) {
+        if (GestionEnnemi.partiePerdue == true || GestionPerso.partieGagnee == true) {
             GestionCompteParties();
+
             if (GestionEnnemi.partiePerdue == true) {
             GestionComptePertes();
+            }
+            else if (GestionPerso.partieGagnee) {
+                GestionCompteGagnes();
             }
         }
     }
@@ -41,11 +46,14 @@ public class BtnFinPartie : MonoBehaviour
             SceneManager.LoadScene("SceneNiveau1Kratos");
         }
 
-        if (GestionEnnemi.partiePerdue == true /*|| GestionPerso.partieGagnee == true*/) {
+        if (GestionEnnemi.partiePerdue == true || GestionPerso.partieGagnee == true) {
             GestionCompteParties();
 
             if (GestionEnnemi.partiePerdue == true) {
             GestionComptePertes();
+            }            
+            else if (GestionPerso.partieGagnee) {
+                GestionCompteGagnes();
             }
         }
     }
@@ -60,9 +68,13 @@ public class BtnFinPartie : MonoBehaviour
         return NbFinPerdu;
     }
 
+    private int GestionCompteGagnes(){
+        NbFinGagne = NbFinGagne + 1;
+        return NbFinGagne;
+    }
+
     void Update()
     {
-        Debug.Log("NbPartiesPerdues : " + NbFinPerdu);
-        Debug.Log("NbParties : " + NbFinPartie);
+        Debug.Log("NbPartiesGagnees : " + NbFinGagne);
     }
 }
