@@ -5165,12 +5165,12 @@ MonoBehaviour:
   - {fileID: 1368522714}
   - {fileID: 1883717925}
   - {fileID: 1825569444}
-  ConqMapJin:
+  ConqMap:
   - {fileID: 1566107321}
   - {fileID: 749295549}
   - {fileID: 499560389}
   - {fileID: 227042787}
-  CadenasMapJin:
+  CadenasMap:
   - {fileID: 1866841999}
   - {fileID: 817743115}
   - {fileID: 1692566276}

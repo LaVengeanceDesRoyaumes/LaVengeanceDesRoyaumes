@@ -8,9 +8,9 @@ public class GestionPartie : MonoBehaviour
     // array de game objects pour detection du nombre de coeurs
     public GameObject[] VieCoeurs;
     // array de game objects pour detection de la conquete des territoires
-    public GameObject[] ConqMapJin;
+    public GameObject[] ConqMap;
     // array de game objects pour detection des territoires déverrouillés
-    public GameObject[] CadenasMapJin;
+    public GameObject[] CadenasMap;
 
 
     // Start is called before the first frame update
@@ -44,26 +44,23 @@ public class GestionPartie : MonoBehaviour
         
 
         if (GestionPerso.partieGagnee == true) {
-
-            if (BtnChangementScene.royaumeChoisi == "jingshen") {
+        
 
                 if (BtnFinPartie.NbFinGagne == 1) {
-                    ConqMapJin[0].SetActive(true);
-                    CadenasMapJin[0].SetActive(false);
+                    ConqMap[0].SetActive(true);
+                    CadenasMap[0].SetActive(false);
                 }
                 else if (BtnFinPartie.NbFinGagne == 2) {
-                    ConqMapJin[1].SetActive(true);
-                    CadenasMapJin[1].SetActive(false);
+                    ConqMap[1].SetActive(true);
+                    CadenasMap[1].SetActive(false);
                 }
                 else if (BtnFinPartie.NbFinGagne == 3) {
-                    ConqMapJin[2].SetActive(true);
-                    CadenasMapJin[2].SetActive(false);
+                    ConqMap[2].SetActive(true);
+                    CadenasMap[2].SetActive(false);
                 }
                 else if (BtnFinPartie.NbFinGagne == 4){
-                    ConqMapJin[3].SetActive(true);
+                    ConqMap[3].SetActive(true);
                 }
-
-            }
 
         }
     }
