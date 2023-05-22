@@ -8,9 +8,9 @@ public class GestionPartie : MonoBehaviour
     // array de game objects pour detection du nombre de coeurs
     public GameObject[] VieCoeurs;
     // array de game objects pour detection de la conquete des territoires
-    public static GameObject[] ConqMapJin;
+    public GameObject[] ConqMapJin;
     // array de game objects pour detection des territoires déverrouillés
-    public static GameObject[] CadenasMapJin;
+    public GameObject[] CadenasMapJin;
 
 
     // Start is called before the first frame update
