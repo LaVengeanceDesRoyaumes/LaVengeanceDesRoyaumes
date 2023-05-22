@@ -21,8 +21,11 @@ EditorBuildSettings:
     path: Assets/Scenes/NiveauUn/SceneNiveau1Jingshen.unity
     guid: 7769f33fb4fa2e5458344a36556ad760
   - enabled: 1
-    path: Assets/Scenes/NiveauDeux/SceneA.unity
-    guid: 7da6dcb479f9f421395faee0092dac09
+    path: Assets/Scenes/NiveauDeux/SceneNiveau2Kratos.unity
+    guid: c0d944ca9defd20449bc336e50d75a08
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/NiveauTrois/SceneNiveau3Kratos.unity
     guid: e753bb28f9854486fade1f7514772e56

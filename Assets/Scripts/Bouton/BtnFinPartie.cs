@@ -10,6 +10,7 @@ public class BtnFinPartie : MonoBehaviour
     static public int NbFinPerdu;
     static public int NbFinPartie;
 
+    
     public void RetourMap()
     {
         if (BtnChangementScene.royaumeChoisi == "jingshen")
@@ -64,5 +65,6 @@ public class BtnFinPartie : MonoBehaviour
     {
         Debug.Log("NbPartiesPerdues : " + NbFinPerdu);
         Debug.Log("NbParties : " + NbFinPartie);
+       
     }
 }
