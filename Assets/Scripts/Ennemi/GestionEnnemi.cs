@@ -17,6 +17,8 @@ public class GestionEnnemi : MonoBehaviour
     //public AudioClip sonBloque;
     public AudioClip[] sonBlesser;
     public AudioClip sonMort;
+    private bool sonMortJoue = false; // Variable pour suivre l'état de lecture du son de mort
+
 
     [Header("Zone detection des coups")]
     public float pointsDeVie = 100f; // points de vie du personnage
@@ -80,7 +82,11 @@ public class GestionEnnemi : MonoBehaviour
 
         if (pointsDeVie <= 0)
         {
-            audioSource.PlayOneShot(sonMort);
+            if (!sonMortJoue)
+            {
+                GetComponent<AudioSource>().PlayOneShot(sonMort);
+                sonMortJoue = true; // Définir la variable sur "true" lorsque le son de mort est joué
+            }
             animatorJoueur.SetTrigger("Mort");
             GestionPerso.finPartie = true;
             Invoke("FinPartie", 4);
