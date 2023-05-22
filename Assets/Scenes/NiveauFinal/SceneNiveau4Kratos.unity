@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17569277, g: 0.0465222, b: 0.029486636, a: 1}
+  m_IndirectSpecularColor: {r: 0.21111944, g: 0.058149792, b: 0.036026347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &19130521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19130523}
+  - component: {fileID: 19130522}
+  m_Layer: 0
+  m_Name: SceneReloader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &19130522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19130521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05121fedb12c425a8b8b43fbdc698d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &19130523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19130521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 501.5, y: 282, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &24746873
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,9 +727,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 159594039}
-        m_TargetAssemblyTypeName: BtnFinPartie, Assembly-CSharp
-        m_MethodName: Rejouer
+      - m_Target: {fileID: 19130522}
+        m_TargetAssemblyTypeName: RecommencerNiveau, Assembly-CSharp
+        m_MethodName: ReloadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5101,7 +5145,7 @@ MonoBehaviour:
   reculeAttaque: 100
   reculeFrappe: 100
   reculeKick: 1000
-  barreDeVie: {fileID: 371479241}
+  barreDeVie: {fileID: 0}
   MenuVictoire: {fileID: 819199483}
   autrePersonnage: {fileID: 1495901590}
 --- !u!1 &1177486325
@@ -5460,9 +5504,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1222303993}
-        m_TargetAssemblyTypeName: BtnFinPartie, Assembly-CSharp
-        m_MethodName: Rejouer
+      - m_Target: {fileID: 19130522}
+        m_TargetAssemblyTypeName: RecommencerNiveau, Assembly-CSharp
+        m_MethodName: ReloadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6422,7 +6466,7 @@ MonoBehaviour:
   degats0: 7
   degats2: 8
   degats1: 9
-  barreDeVie: {fileID: 904858347}
+  barreDeVie: {fileID: 0}
   aiAttaque: 0
   tempsAttaque: 2
   animatorJoueur: {fileID: 1806642887}
