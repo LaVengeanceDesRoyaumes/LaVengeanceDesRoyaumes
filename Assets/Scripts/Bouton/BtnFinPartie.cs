@@ -48,18 +48,24 @@ public class BtnFinPartie : MonoBehaviour
             SceneManager.LoadScene("SceneNiveau1Kratos");
         }
 
-        if (GestionEnnemi.partiePerdue == true) {
+        if (GestionEnnemi.partiePerdue)
+        {
             GestionCompteParties();
 
-            if (GestionEnnemi.partiePerdue == true && GestionPerso.partieGagnee == false) {
+            if (GestionPerso.partieGagnee == false)
+            {
                 GestionComptePertes();
             }
         }
-        if(GestionPerso.partieGagnee == true){
-            if (GestionPerso.partieGagnee == true && GestionEnnemi.partiePerdue == false) {
+
+        if (GestionPerso.partieGagnee)
+        {
+            if (GestionEnnemi.partiePerdue == false)
+            {
                 GestionCompteGagnes();
             }
         }
+
     }
 
     private int GestionCompteParties(){

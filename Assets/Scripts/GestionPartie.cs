@@ -25,56 +25,78 @@ public class GestionPartie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // trouver une façon plus efficace d'écrire ça?
-        // un for loop ou la variable i represente la position dans le array vieCoeurs
-        if (BtnFinPartie.NbFinPerdu == 1) {
+        // Trouver une façon plus efficace d'écrire ça?
+        // Un for loop où la variable i représente la position dans le tableau vieCoeurs
+
+        if (BtnFinPartie.NbFinPerdu == 1)
+        {
+            // Désactiver le troisième élément du tableau VieCoeurs
             VieCoeurs[2].SetActive(false);
         }
-        if (BtnFinPartie.NbFinPerdu == 2) {
+
+        if (BtnFinPartie.NbFinPerdu == 2)
+        {
+            // Désactiver les deuxième et troisième éléments du tableau VieCoeurs
             VieCoeurs[1].SetActive(false);
             VieCoeurs[2].SetActive(false);
         }
-        if (BtnFinPartie.NbFinPerdu == 3) {
+
+        if (BtnFinPartie.NbFinPerdu == 3)
+        {
+            // Désactiver tous les éléments du tableau VieCoeurs
             VieCoeurs[0].SetActive(false);
             VieCoeurs[1].SetActive(false);
             VieCoeurs[2].SetActive(false);
+
+            // Activer l'élément EcranPerdu
             EcranPerdu.SetActive(true);
         }
 
+        if (GestionPerso.partieGagnee == true)
+        {
+            if (BtnFinPartie.NbFinGagne == 1)
+            {
+                // Activer le premier élément du tableau ConqMap
+                ConqMap[0].SetActive(true);
 
-        // if (GestionEnnemi.partiePerdue == true) {
-        //     VieCoeurs[2].SetActive(false);
-        // }
-        
+                // Désactiver le premier élément du tableau CadenasMap
+                CadenasMap[0].SetActive(false);
+            }
+            else if (BtnFinPartie.NbFinGagne == 2)
+            {
+                // Activer le deuxième élément du tableau ConqMap
+                ConqMap[1].SetActive(true);
 
-        if (GestionPerso.partieGagnee == true) {
-        
+                // Désactiver les deux premiers éléments du tableau CadenasMap
+                CadenasMap[0].SetActive(false);
+                CadenasMap[1].SetActive(false);
+            }
+            else if (BtnFinPartie.NbFinGagne == 3)
+            {
+                // Activer le troisième élément du tableau ConqMap
+                ConqMap[2].SetActive(true);
 
-                if (BtnFinPartie.NbFinGagne == 1) {
-                    ConqMap[0].SetActive(true);
-                    CadenasMap[0].SetActive(false);
-                }
-                else if (BtnFinPartie.NbFinGagne == 2) {
-                    ConqMap[1].SetActive(true);
-                    CadenasMap[0].SetActive(false);
-                    CadenasMap[1].SetActive(false);
-                }
-                else if (BtnFinPartie.NbFinGagne == 3) {
-                    ConqMap[2].SetActive(true);
-                    CadenasMap[0].SetActive(false);
-                    CadenasMap[1].SetActive(false);
-                    CadenasMap[2].SetActive(false);
-                }
-                else if (BtnFinPartie.NbFinGagne == 4){
-                    ConqMap[3].SetActive(true);
-                    CadenasMap[0].SetActive(false);
-                    CadenasMap[1].SetActive(false);
-                    CadenasMap[2].SetActive(false);
-                    EcranGagne.SetActive(true);
-                }
+                // Désactiver les trois premiers éléments du tableau CadenasMap
+                CadenasMap[0].SetActive(false);
+                CadenasMap[1].SetActive(false);
+                CadenasMap[2].SetActive(false);
+            }
+            else if (BtnFinPartie.NbFinGagne == 4)
+            {
+                // Activer le quatrième élément du tableau ConqMap
+                ConqMap[3].SetActive(true);
 
+                // Désactiver tous les éléments du tableau CadenasMap
+                CadenasMap[0].SetActive(false);
+                CadenasMap[1].SetActive(false);
+                CadenasMap[2].SetActive(false);
+
+                // Activer l'élément EcranGagne
+                EcranGagne.SetActive(true);
+            }
         }
     }
+
 
     void PerteVie()
     {

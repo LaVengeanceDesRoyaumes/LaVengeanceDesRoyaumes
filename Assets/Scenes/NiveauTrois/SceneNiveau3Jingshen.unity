@@ -2744,9 +2744,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -870823317777057635, guid: e397a7bdaab8949e0a4ec16fe0b1e1c9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000029450037
+      objectReference: {fileID: 0}
+    - target: {fileID: -870823317777057635, guid: e397a7bdaab8949e0a4ec16fe0b1e1c9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.028756257
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e397a7bdaab8949e0a4ec16fe0b1e1c9, type: 3}
       propertyPath: m_Name
       value: KratosSoldat1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e397a7bdaab8949e0a4ec16fe0b1e1c9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e397a7bdaab8949e0a4ec16fe0b1e1c9, type: 3}
       propertyPath: m_TagString
@@ -6499,6 +6511,10 @@ PrefabInstance:
       value: JingshenGeneral
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b53964a842cae164b8b9684e34ab0b35, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b53964a842cae164b8b9684e34ab0b35, type: 3}
       propertyPath: m_TagString
       value: joueur
       objectReference: {fileID: 0}
@@ -6520,7 +6536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1092408308860062549, guid: b53964a842cae164b8b9684e34ab0b35, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.097475715
+      value: -0.09747572
       objectReference: {fileID: 0}
     - target: {fileID: 1092408308860062549, guid: b53964a842cae164b8b9684e34ab0b35, type: 3}
       propertyPath: m_LocalRotation.y
@@ -6528,7 +6544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1092408308860062549, guid: b53964a842cae164b8b9684e34ab0b35, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.01514919
+      value: 0.015149191
       objectReference: {fileID: 0}
     - target: {fileID: 1189529853000058984, guid: b53964a842cae164b8b9684e34ab0b35, type: 3}
       propertyPath: m_LocalPosition.x

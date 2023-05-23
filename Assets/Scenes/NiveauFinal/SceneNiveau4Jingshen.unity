@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731689, g: 0.13414702, b: 0.1210784, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5370,6 +5370,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2f7508d4a05cffe449df6890a20ec7ee, type: 3}
       propertyPath: m_Name
       value: JingshenFinal
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f7508d4a05cffe449df6890a20ec7ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2f7508d4a05cffe449df6890a20ec7ee, type: 3}
       propertyPath: m_TagString

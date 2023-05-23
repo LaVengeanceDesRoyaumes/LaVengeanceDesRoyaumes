@@ -156,7 +156,6 @@ public class GestionPerso : MonoBehaviour
         {
             animatorEnnemi.SetTrigger("Mort");
             Invoke("FinPartie", 4);
-            autrePersonnage.SetActive(false);
             if (!sonMortJoue)
             {
                 GetComponent<AudioSource>().PlayOneShot(sonMort);
