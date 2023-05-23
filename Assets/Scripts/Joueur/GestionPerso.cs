@@ -34,7 +34,7 @@ public class GestionPerso : MonoBehaviour
     [Header("Zone detection des coups")]
     public float pointsDeVie = 100f; // points de vie de l'ennemie
     public float degats = 3f; // les dégâts infligés aux ennemis
-    public float degatsFrappe = 4f; // les dégâts avec le kick 2
+    public float degatsFrappe = 4f; // les dégâts avec la frappe
     public float degatsBotte = 5f; // les dégâts infligés aux ennemis avec kick
     public float reculeAttaque = 100;
     public float reculeFrappe = 100;
@@ -156,6 +156,7 @@ public class GestionPerso : MonoBehaviour
         {
             animatorEnnemi.SetTrigger("Mort");
             Invoke("FinPartie", 4);
+            autrePersonnage.SetActive(false);
             if (!sonMortJoue)
             {
                 GetComponent<AudioSource>().PlayOneShot(sonMort);

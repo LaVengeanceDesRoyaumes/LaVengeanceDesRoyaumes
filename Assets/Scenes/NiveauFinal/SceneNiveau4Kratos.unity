@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21111944, g: 0.058149792, b: 0.036026347, a: 1}
+  m_IndirectSpecularColor: {r: 0.17582892, g: 0.04644966, b: 0.029480603, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3519,6 +3519,10 @@ PrefabInstance:
       value: JingshenFinal
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2f7508d4a05cffe449df6890a20ec7ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f7508d4a05cffe449df6890a20ec7ee, type: 3}
       propertyPath: m_TagString
       value: ennemi
       objectReference: {fileID: 0}
@@ -3995,7 +3999,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 55.000004
+  field of view: 55
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -4711,7 +4715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 016d4e50e504bbb4eaa631bc87ba7728, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.790024
+      value: -19.79
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 016d4e50e504bbb4eaa631bc87ba7728, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4887,9 +4891,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.7
-  m_Height: 5.4962807
+  m_Height: 5.281967
   m_Direction: 1
-  m_Center: {x: -1.678816e-18, y: 1.0483097, z: -0.0008584261}
+  m_Center: {x: 1.678816e-18, y: 2.6255894, z: -0.0008584261}
 --- !u!95 &1495901597
 Animator:
   serializedVersion: 5

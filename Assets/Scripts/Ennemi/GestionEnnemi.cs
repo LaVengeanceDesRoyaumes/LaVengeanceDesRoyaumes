@@ -87,6 +87,7 @@ public class GestionEnnemi : MonoBehaviour
                 GetComponent<AudioSource>().PlayOneShot(sonMort);
                 sonMortJoue = true; // Définir la variable sur "true" lorsque le son de mort est joué
             }
+            gameObject.SetActive(false);
             animatorJoueur.SetTrigger("Mort");
             GestionPerso.finPartie = true;
             Invoke("FinPartie", 4);
