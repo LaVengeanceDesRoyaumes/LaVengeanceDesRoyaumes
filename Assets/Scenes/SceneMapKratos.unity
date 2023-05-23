@@ -782,7 +782,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 166503850}
         m_TargetAssemblyTypeName: BtnMapKratos, Assembly-CSharp
-        m_MethodName: ChargementJeuNiveau4
+        m_MethodName: OuvrirMenuJouer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1438,7 +1438,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 259139177}
         m_TargetAssemblyTypeName: BtnMapKratos, Assembly-CSharp
-        m_MethodName: ChargementJeuNiveau3
+        m_MethodName: OuvrirMenuJouer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4451,7 +4451,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 768956131}
         m_TargetAssemblyTypeName: BtnMapKratos, Assembly-CSharp
-        m_MethodName: ChargementJeuNiveau3
+        m_MethodName: OuvrirMenuJouer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
