@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BtnMapJingshen : MonoBehaviour
 {
 
     public GameObject MenuJouer;
-    public GameObject boutonFrontiere;
 
     void Start(){
-        //boutonFrontiere = GetComponent<Button>().onClick.Invoke(ChargementJeuNiveau2);;
+        //Jouer.onClick.AddListener(GestionChargement);
     }
 
     void Update(){
@@ -28,6 +28,11 @@ public class BtnMapJingshen : MonoBehaviour
     {
         MenuJouer.SetActive(false);
     }
+
+    public void GestionChargement(){
+
+    }
+
     public void ChargementJeuNiveau1()
     {
         SceneManager.LoadScene("SceneNiveau1Jingshen");
