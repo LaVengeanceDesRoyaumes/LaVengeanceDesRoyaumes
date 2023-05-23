@@ -22,13 +22,14 @@ public class BtnFinPartie : MonoBehaviour
             SceneManager.LoadScene("SceneMapKratos");
         }
 
-        if (GestionEnnemi.partiePerdue == true || GestionPerso.partieGagnee == true) {
+        if (GestionEnnemi.partiePerdue == true) {
             GestionCompteParties();
 
             if (GestionEnnemi.partiePerdue == true) {
-            GestionComptePertes();
+                GestionComptePertes();
             }
-            
+        }
+        if(GestionPerso.partieGagnee == true){
             if (GestionPerso.partieGagnee == true) {
                 GestionCompteGagnes();
             }
@@ -47,14 +48,15 @@ public class BtnFinPartie : MonoBehaviour
             SceneManager.LoadScene("SceneNiveau1Kratos");
         }
 
-        if (GestionEnnemi.partiePerdue == true || GestionPerso.partieGagnee == true) {
+        if (GestionEnnemi.partiePerdue == true) {
             GestionCompteParties();
 
-            if (GestionEnnemi.partiePerdue == true) {
-            GestionComptePertes();
-            }            
-            
-            if (GestionPerso.partieGagnee == true) {
+            if (GestionEnnemi.partiePerdue == true && GestionPerso.partieGagnee == false) {
+                GestionComptePertes();
+            }
+        }
+        if(GestionPerso.partieGagnee == true){
+            if (GestionPerso.partieGagnee == true && GestionEnnemi.partiePerdue == false) {
                 GestionCompteGagnes();
             }
         }
