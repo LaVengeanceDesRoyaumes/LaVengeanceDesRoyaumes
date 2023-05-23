@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1786,11 +1786,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Un jeune guerrier kratien est appel\xE9 \xE0 vaincre le roi du royaume
-    ennemi Jingsh\xE9n\u2026 ce qui n'est pas une mince affaire. Il prend solennellement
-    la route vers le royaume en question et rencontre un jeune soldat jingshien qui
-    a \xE9t\xE9 envoy\xE9 pour l'emp\xEAcher d'atteindre Jingsh\xE9n. Pr\xE9parez-vous
-    ! La route est longue..."
+  m_text: "Apr\xE8s avoir vaincu le jeune soldat qui lui barrait la route dans la
+    for\xEAt, le h\xE9ros arrive \xE0 la fronti\xE8re du royaume adverse. Un autre
+    soldat lui barre la route vers le ro yaume adverse. C'est l'heure de la deuxi\xE8me
+    bataille !"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 341a7a846018fbf4091ef0a20eaf8852, type: 2}
   m_sharedMaterial: {fileID: -5752615501656400027, guid: 341a7a846018fbf4091ef0a20eaf8852, type: 2}
@@ -1817,7 +1816,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.9
+  m_fontSize: 26.4
   m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2388,7 +2387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: f1337f7c15c6e9b45b4729ff74022eb5, type: 3}
+  m_Texture: {fileID: 2800000, guid: 85e42a5f3a0ac43549e6cd08cb6d3f16, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -5208,7 +5207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: f1337f7c15c6e9b45b4729ff74022eb5, type: 3}
+  m_Texture: {fileID: 2800000, guid: faf26613942304407b8e43dd98c2475c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -6009,7 +6008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 381}
+  m_AnchoredPosition: {x: 68, y: 381}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1125300944
@@ -6032,7 +6031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "La F\xF4ret"
+  m_text: "La Fronti\xE8re"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b6073522cb694e747a6360bb1deb06d9, type: 2}
   m_sharedMaterial: {fileID: -9185789116358523430, guid: b6073522cb694e747a6360bb1deb06d9, type: 2}
