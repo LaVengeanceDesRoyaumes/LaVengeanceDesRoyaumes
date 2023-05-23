@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21111944, g: 0.058149792, b: 0.036026347, a: 1}
+  m_IndirectSpecularColor: {r: 0.21111888, g: 0.058149647, b: 0.036026325, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1470,7 +1470,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &396306710
 GameObject:
@@ -5175,47 +5175,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1140704018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140704014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f81d66be24287e44ba5f2dd5126a6e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effetSang: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
-  effetAttaque:
-  - {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
-  - {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
-  - {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
-  particleDuration: 0.3
-  sonSwoosh: {fileID: 8300000, guid: 31066f1d3b686e940b0105b00d8759bd, type: 3}
-  sonAttaque: {fileID: 8300000, guid: 108caaa65ab028d4b859d927be4cfc0b, type: 3}
-  sonBlesser:
-  - {fileID: 8300000, guid: 23577913d25f7914eb683c5bdef18036, type: 3}
-  - {fileID: 8300000, guid: fcb0e902348322a4abcd9f2d7d263a56, type: 3}
-  - {fileID: 8300000, guid: 09a180207b8236a4d927aef796301664, type: 3}
-  sonMort: {fileID: 8300000, guid: 9c7776120e08a4148895e3892842a81f, type: 3}
-  animatorPerso: {fileID: 1806642887}
-  animatorEnnemi: {fileID: 1495901597}
-  rigidbodyPerso: {fileID: 1140704016}
-  enemyRigidbody: {fileID: 1495901591}
-  vitesseDeplacement: 100
-  hauteurSaut: 0
-  pointsDeVie: 100
-  degats: 1
-  degatsFrappe: 4
-  degatsBotte: 3
-  reculeAttaque: 100
-  reculeFrappe: 100
-  reculeKick: 1000
-  barreDeVie: {fileID: 0}
-  MenuVictoire: {fileID: 819199483}
-  autrePersonnage: {fileID: 1495901590}
 --- !u!1 &1177486325
 GameObject:
   m_ObjectHideFlags: 0
@@ -6505,45 +6464,6 @@ CapsuleCollider:
   m_Height: 2.236098
   m_Direction: 1
   m_Center: {x: -1.678816e-18, y: 1.0483097, z: -0.0008584261}
---- !u!114 &1495901595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495901590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac9e4afea59143e7add5eb82b0d8974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effetSang: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
-  effetAttaque:
-  - {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
-  - {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
-  - {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
-  particleDuration: 0.3
-  sonSwoosh: {fileID: 8300000, guid: 31066f1d3b686e940b0105b00d8759bd, type: 3}
-  sonAttaque: {fileID: 8300000, guid: 108caaa65ab028d4b859d927be4cfc0b, type: 3}
-  sonBlesser:
-  - {fileID: 8300000, guid: addc6f54d9182cc4a9ca03de59d6e7dd, type: 3}
-  - {fileID: 8300000, guid: 40de3956e915ae942a22e603efd3e97d, type: 3}
-  - {fileID: 8300000, guid: 11d17531d880cb84eb62d4991e4097ea, type: 3}
-  sonMort: {fileID: 8300000, guid: b43bc4db64439d34fb964be761b09463, type: 3}
-  pointsDeVie: 100
-  degats0: 7
-  degats2: 8
-  degats1: 9
-  barreDeVie: {fileID: 0}
-  aiAttaque: 0
-  tempsAttaque: 2
-  animatorJoueur: {fileID: 1806642887}
-  rigidbodyPerso: {fileID: 1495901591}
-  cible: {fileID: 26579138}
-  vitesseDeplacement: 1e-35
-  distanceArret: 2
-  MenuDefaite: {fileID: 2065717785}
-  numeroA: 3
 --- !u!95 &1495901597
 Animator:
   serializedVersion: 5
@@ -6724,7 +6644,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1537729602
 GameObject:
