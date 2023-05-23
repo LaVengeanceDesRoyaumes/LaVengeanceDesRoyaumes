@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2109,7 +2109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d601a8f3799c79e42aa9bbb9855cf982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VieCoeurs: []
+  VieCoeurs:
+  - {fileID: 349752702}
+  - {fileID: 1701596611}
+  - {fileID: 1985142943}
   ConqMap:
   - {fileID: 677608918}
   - {fileID: 918301795}
@@ -2119,6 +2122,8 @@ MonoBehaviour:
   - {fileID: 2131023792}
   - {fileID: 801647771}
   - {fileID: 1903841578}
+  EcranGagne: {fileID: 324327827}
+  EcranPerdu: {fileID: 2110246353}
 --- !u!1 &349752702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,6 +3739,7 @@ GameObject:
   - component: {fileID: 713988312}
   - component: {fileID: 713988311}
   - component: {fileID: 713988310}
+  - component: {fileID: 713988313}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -3805,7 +3811,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 713988311}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 713988313}
+        m_TargetAssemblyTypeName: BtnChangementScene, Assembly-CSharp
+        m_MethodName: RetourAccueil
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &713988311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3844,6 +3862,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713988308}
   m_CullTransparentMesh: 1
+--- !u!114 &713988313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713988308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a69c16ec0b8e534fbb90794d6119a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &715321026
 GameObject:
   m_ObjectHideFlags: 0
@@ -10511,6 +10541,7 @@ GameObject:
   - component: {fileID: 2123031539}
   - component: {fileID: 2123031538}
   - component: {fileID: 2123031537}
+  - component: {fileID: 2123031540}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -10582,7 +10613,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2123031538}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2123031540}
+        m_TargetAssemblyTypeName: BtnChangementScene, Assembly-CSharp
+        m_MethodName: RetourAccueil
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2123031538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10621,6 +10664,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123031535}
   m_CullTransparentMesh: 1
+--- !u!114 &2123031540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123031535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a69c16ec0b8e534fbb90794d6119a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2131023792
 GameObject:
   m_ObjectHideFlags: 0

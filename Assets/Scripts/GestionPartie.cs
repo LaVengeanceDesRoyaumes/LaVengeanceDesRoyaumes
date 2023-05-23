@@ -11,6 +11,9 @@ public class GestionPartie : MonoBehaviour
     public GameObject[] ConqMap;
     // array de game objects pour detection des territoires déverrouillés
     public GameObject[] CadenasMap;
+    // ecran de fin
+    public GameObject EcranGagne;
+    public GameObject EcranPerdu;
 
 
     // Start is called before the first frame update
@@ -35,6 +38,7 @@ public class GestionPartie : MonoBehaviour
             VieCoeurs[0].SetActive(false);
             VieCoeurs[1].SetActive(false);
             VieCoeurs[2].SetActive(false);
+            EcranPerdu.SetActive(true);
         }
 
 
@@ -52,14 +56,21 @@ public class GestionPartie : MonoBehaviour
                 }
                 else if (BtnFinPartie.NbFinGagne == 2) {
                     ConqMap[1].SetActive(true);
+                    CadenasMap[0].SetActive(false);
                     CadenasMap[1].SetActive(false);
                 }
                 else if (BtnFinPartie.NbFinGagne == 3) {
                     ConqMap[2].SetActive(true);
+                    CadenasMap[0].SetActive(false);
+                    CadenasMap[1].SetActive(false);
                     CadenasMap[2].SetActive(false);
                 }
                 else if (BtnFinPartie.NbFinGagne == 4){
                     ConqMap[3].SetActive(true);
+                    CadenasMap[0].SetActive(false);
+                    CadenasMap[1].SetActive(false);
+                    CadenasMap[2].SetActive(false);
+                    EcranGagne.SetActive(true);
                 }
 
         }

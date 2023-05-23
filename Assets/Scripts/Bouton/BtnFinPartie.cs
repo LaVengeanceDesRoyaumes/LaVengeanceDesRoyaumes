@@ -28,7 +28,8 @@ public class BtnFinPartie : MonoBehaviour
             if (GestionEnnemi.partiePerdue == true) {
             GestionComptePertes();
             }
-            else if (GestionPerso.partieGagnee) {
+            
+            if (GestionPerso.partieGagnee == true) {
                 GestionCompteGagnes();
             }
         }
@@ -52,7 +53,8 @@ public class BtnFinPartie : MonoBehaviour
             if (GestionEnnemi.partiePerdue == true) {
             GestionComptePertes();
             }            
-            else if (GestionPerso.partieGagnee) {
+            
+            if (GestionPerso.partieGagnee == true) {
                 GestionCompteGagnes();
             }
         }
