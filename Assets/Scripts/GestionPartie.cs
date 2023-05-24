@@ -52,8 +52,6 @@ public class GestionPartie : MonoBehaviour
             EcranPerdu.SetActive(true);
         }
 
-        if (GestionEnnemi.partiePerdue == false)
-        {
             if (BtnFinPartie.NbFinGagne == 1)
             {
                 // Activer le premier élément du tableau ConqMap
@@ -94,7 +92,7 @@ public class GestionPartie : MonoBehaviour
                 // Activer l'élément EcranGagne
                 EcranGagne.SetActive(true);
             }
-        }
+        
     }
 
 

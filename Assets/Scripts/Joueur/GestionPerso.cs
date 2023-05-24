@@ -261,6 +261,7 @@ public class GestionPerso : MonoBehaviour
     void FinPartie()
     {
         MenuVictoire.SetActive(true);
+        GestionEnnemi.partiePerdue = false;
         //partieGagnee = true;
     }
 
