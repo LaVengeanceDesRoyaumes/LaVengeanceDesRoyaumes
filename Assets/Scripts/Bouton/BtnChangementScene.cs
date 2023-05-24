@@ -41,7 +41,6 @@ public class BtnChangementScene : MonoBehaviour
     void Update()
     {
         Scene scene = SceneManager.GetActiveScene();
-        Debug.Log(scene.name);
         if (scene.name.Contains("Kratos")){
             royaumeChoisi = "kratos";
         }
