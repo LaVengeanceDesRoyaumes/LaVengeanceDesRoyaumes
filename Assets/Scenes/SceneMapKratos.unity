@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1123,7 +1123,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Vous \xEAtes arriv\xE9 \xE0 la capitale, et vous avez maintenant l'opportunit\xE9
-    de conqu\xE9rir le royaume de Jingshen. Cependant, pour y parvenir, vous devrez
+    de conqu\xE9rir le royaume de Jingsh\xE9n. Cependant, pour y parvenir, vous devrez
     triompher du redoutable monstre qui prot\xE8ge ce royaume."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 341a7a846018fbf4091ef0a20eaf8852, type: 2}
