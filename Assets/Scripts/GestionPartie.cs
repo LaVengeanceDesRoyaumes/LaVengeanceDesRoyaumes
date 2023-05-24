@@ -52,7 +52,7 @@ public class GestionPartie : MonoBehaviour
             EcranPerdu.SetActive(true);
         }
 
-        if (GestionPerso.partieGagnee == true)
+        if (GestionEnnemi.partiePerdue == false)
         {
             if (BtnFinPartie.NbFinGagne == 1)
             {

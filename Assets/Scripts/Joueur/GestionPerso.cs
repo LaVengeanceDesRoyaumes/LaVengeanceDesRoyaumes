@@ -44,7 +44,7 @@ public class GestionPerso : MonoBehaviour
     [Header("Zone gestion de partie")]
     public static bool finPartie = false;
     public GameObject MenuVictoire;
-    public static bool partieGagnee;
+    //public static bool partieGagnee;
 
     [Header("Zone retourne perso")]
     private bool estRetourne = false; // Indique si le personnage est retourné ou non
@@ -261,7 +261,7 @@ public class GestionPerso : MonoBehaviour
     void FinPartie()
     {
         MenuVictoire.SetActive(true);
-        partieGagnee = true;
+        //partieGagnee = true;
     }
 
     public void RetournerPersonnages()
